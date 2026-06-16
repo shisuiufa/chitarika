@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 
 import { LEVELS } from "@/features/game/constants/levels";
-import { getReadingUnitLabel } from "src/features/game/model/reading/get-reading-unit-label";
+import { getReadingUnitLabel } from "@/features/game/model/reading/get-reading-unit-label";
 
 describe("getReadingUnitLabel", () => {
   describe("syllables", () => {

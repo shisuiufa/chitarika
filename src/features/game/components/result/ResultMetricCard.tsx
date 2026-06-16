@@ -1,4 +1,3 @@
-import Card from "@/shared/ui/Card";
 import type { ReactNode } from "react";
 
 type ResultMetricCardColor = "yellow" | "orange" | "green";
@@ -11,10 +10,19 @@ type ResultMetricCardProps = {
   className?: string;
 };
 
+const colorClasses: Record<ResultMetricCardColor, string> = {
+  yellow:
+    "bg-[#FFF8DD] text-[#8A6800] border-[#F3D35C] shadow-[0_6px_0_#E6C554]",
+  orange:
+    "bg-[#FFF0DC] text-[#9A5700] border-[#F4B468] shadow-[0_6px_0_#EAA65A]",
+  green:
+    "bg-[#EAFBED] text-[#008A3D] border-[#7FDE98] shadow-[0_6px_0_#6ED489]",
+};
+
 const iconColorClasses: Record<ResultMetricCardColor, string> = {
-  yellow: "bg-[#FFF2C9] text-[#8A6800]",
-  orange: "bg-[#FFE8CC] text-[#9A5700]",
-  green: "bg-[#DDF8E5] text-[#008A3D]",
+  yellow: "bg-[#FFE08A]",
+  orange: "bg-[#FFD0A0]",
+  green: "bg-[#BDF4C8]",
 };
 
 export default function ResultMetricCard({
@@ -25,20 +33,31 @@ export default function ResultMetricCard({
   className = "",
 }: ResultMetricCardProps) {
   return (
-    <Card className={className} innerClassName="bg-cream p-7 lg:p-12">
-      <div className="flex flex-col items-center gap-2 lg:gap-4">
-        <div className={`rounded-full p-4 lg:p-6 ${iconColorClasses[color]}`}>
-          {icon}
-        </div>
-
-        <span className="font-nunito-sans text-lg lg:text-xl text-brown">
-          {label}
-        </span>
-
-        <strong className="font-comfortaa text-lg lg:text-xl font-extrabold">
-          {value}
-        </strong>
+    <div
+      className={`
+        flex min-w-0 items-center gap-4 rounded-4xl border-2 border-b-0 p-4
+        min-h-28
+        ${colorClasses[color]}
+        ${className}
+      `}
+    >
+      <div
+        className={`
+          flex size-14 shrink-0 items-center justify-center rounded-3xl
+          ${iconColorClasses[color]}
+        `}
+      >
+        {icon}
       </div>
-    </Card>
+
+      <div className="min-w-0 text-left">
+        <h5 className="font-nunito-sans text-base font-bold">
+          {label}
+        </h5>
+        <p className="mt-2 font-comfortaa text-2xl lg:text-3xl font-extrabold text-dark-brown">
+          {value}
+        </p>
+      </div>
+    </div>
   );
 }
