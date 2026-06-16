@@ -1,0 +1,92 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "Comfortaa";
+  src: url("../fonts/Comfortaa.woff2") format("woff2");
+  font-weight: 300 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Nunito Sans";
+  src: url("../fonts/NunitoSans.woff2") format("woff2");
+  font-weight: 200 1000;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme {
+  --color-brown: #765a00;
+  --color-dark-brown: #201b0a;
+  --color-gold-brown: #6f5500;
+  --color-cream: #fff8ef;
+  --color-sand: #e0d0b2;
+  --color-yellow: #ffc928;
+  --color-orange: #fd9d1a;
+  --color-vanilla: #f9edd0;
+  --font-comfortaa: "Comfortaa", system-ui, sans-serif;
+  --font-nunito-sans: "Nunito Sans", system-ui, sans-serif;
+}
+
+body {
+  font-family: var(--font-comfortaa), serif;
+  background: #fff8ef;
+  color: #4e4633;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--color-brown);
+  font-weight: 700;
+}
+
+* {
+  user-select: none;
+}
+
+@keyframes logoPulse {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.75;
+  }
+
+  50% {
+    transform: scale(1.08);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(0.95);
+    opacity: 0.75;
+  }
+}
+
+.animate-logo-pulse {
+  animation: logoPulse 1.2s ease-in-out infinite;
+}
+
+@keyframes progress-shine {
+  from {
+    transform: translateX(220%);
+  }
+
+  to {
+    transform: translateX(-120%);
+  }
+}
+
+.progress-shine {
+  animation: progress-shine 1s ease-in-out infinite;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.4) 50%,
+    transparent 100%
+  );
+}
+
