@@ -5,5 +5,5 @@ export const GAME_ACTIONS = {
   NextTask: "nextTask",
   GameCompleted: "gameCompleted",
   HistoryOpened: "historyOpened",
-  SettingsOpened: 'settingsOpened',
+  SettingsOpened: "settingsOpened",
 } as const;

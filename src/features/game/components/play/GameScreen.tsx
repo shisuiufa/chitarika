@@ -1,7 +1,5 @@
 import TaskCard from "@/features/game/components/play/TaskCard";
 import GameHeader from "@/features/game/components/play/GameHeader";
-import Button from "@/shared/ui/Button";
-import ArrowRightIcon from "@/shared/icons/ArrowRightIcon";
 import type { GameSettingsState } from "@/features/game/types/setting";
 import type { ReadingTask } from "@/features/game/types/reading";
 
@@ -33,19 +31,20 @@ export default function GameScreen({
   };
 
   return (
-    <>
-      <div className="w-full lg:w-[75%] h-full flex flex-col gap-10">
-        <GameHeader
-          level={settings.level}
-          current={currentTaskIndex + 1}
-          total={tasks.length}
-        />
-        <TaskCard className="grow" level={settings.level} task={currentTask} />
-        <Button size="lg" className="uppercase mx-auto" onClick={handleClick}>
-          <span className="translate-y-0.5 leading-none">{buttonText}</span>
-          <ArrowRightIcon />
-        </Button>
-      </div>
-    </>
+    <div className="w-full lg:w-[75%] flex h-full flex-col justify-center gap-7">
+      <GameHeader
+        level={settings.level}
+        current={currentTaskIndex + 1}
+        total={tasks.length}
+      />
+
+      <TaskCard
+        className="grow"
+        level={settings.level}
+        task={currentTask}
+        onClick={handleClick}
+        btnText={buttonText}
+      />
+    </div>
   );
 }

@@ -9,8 +9,8 @@ import Card from "@/shared/ui/Card";
 import { getReadingUnitLabel } from "@/features/game/model/reading/get-reading-unit-label";
 import ResultStars from "@/features/game/components/result/ResultStars";
 import ResultActions from "@/features/game/components/result/ResultActions";
-import ResultMetrics from "@/features/game/components/result/ResultMetrics";
-import ResultDetails from "@/features/game/components/result/ResultDetails";
+import ResultMetrics from "@/features/game/components/result/result-metrics/ResultMetrics";
+import ResultDetails from "@/features/game/components/result/result-details/ResultDetails";
 
 type GameResultProps = {
   startedAt: number;

@@ -1,4 +1,4 @@
-import ResultMetricCard from "@/features/game/components/result/ResultMetricCard";
+import ResultMetricCard from "@/features/game/components/result/result-metrics/ResultMetricCard";
 import TimeIcon from "@/shared/icons/TimeIcon";
 import BookIcon from "@/shared/icons/BookIcon";
 import ReadIcon from "@/shared/icons/ReadIcon";

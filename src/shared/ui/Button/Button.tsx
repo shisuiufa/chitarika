@@ -19,8 +19,8 @@ const variantClasses: Record<ButtonVariant, string> = {
   secondary: `
     bg-white
     text-dark-brown
-    shadow-[0_6px_0_#DDD3C1,0_10px_18px_rgba(0,0,0,0.12)]
-    active:shadow-[0_3px_0_#DDD3C1,0_6px_12px_rgba(0,0,0,0.1)]
+    shadow-[0_8px_0_#DDD3C1,0_12px_20px_rgba(0,0,0,0.12)]
+    active:shadow-[0_4px_0_#DDD3C1,0_8px_14px_rgba(0,0,0,0.1)]
   `,
 };
 
@@ -28,7 +28,7 @@ const sizeClasses: Record<ButtonSize, string> = {
   sm: "px-6 py-3 text-sm",
   md: "px-9 py-4 text-base",
   lg: "px-12 py-5 text-lg",
-  xl: "px-15 py-6 text-2xl"
+  xl: "px-15 py-6 text-2xl",
 };
 
 export default function Button({

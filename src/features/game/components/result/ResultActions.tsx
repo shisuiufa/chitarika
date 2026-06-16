@@ -15,7 +15,7 @@ export default function ResultActions({
     <div
       className={`border-t-2 border-dashed border-sand/70 pt-6 ${className}`}
     >
-      <div className="mx-auto flex flex-col gap-4 w-full md:w-[40%]">
+      <div className="mx-auto flex flex-col gap-4 w-full lg:w-[70%] xl:w-[50%]">
         <Button
           size="lg"
           className="relative z-100 w-full uppercase"
@@ -34,7 +34,7 @@ export default function ResultActions({
             Настройки
           </Button>
 
-          <Button size="lg" variant="secondary" className="uppercase">
+          <Button size="lg" variant="secondary" className="uppercase flex-1">
             История
           </Button>
         </div>

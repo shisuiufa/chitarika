@@ -127,8 +127,9 @@ function App() {
           completedAt={gameState.completedAt ?? 0}
           tasks={gameState.tasks}
           level={gameState.settings.level}
+          difficulty={gameState.settings.difficulty}
           onOpenSettings={handleOpenSettings}
-          onStart={handleStartGame}
+          onRestart={handleStartGame}
         />
       )}
 

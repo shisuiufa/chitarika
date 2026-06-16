@@ -55,10 +55,12 @@ export default function GameSettings({
           />
         </div>
 
-        <Button className="mx-auto uppercase" size="lg" onClick={onStart}>
-          <span className="translate-y-0.5 leading-none">Начать</span>
-          <ArrowRightIcon />
-        </Button>
+        <div className="mt-6 border-t-2 border-dashed border-sand/70 pt-6">
+          <Button className="mx-auto uppercase" size="lg" onClick={onStart}>
+            <span className="translate-y-0.5 leading-none">Начать</span>
+            <ArrowRightIcon />
+          </Button>
+        </div>
       </Card>
     </>
   );

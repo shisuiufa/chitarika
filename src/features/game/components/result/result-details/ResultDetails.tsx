@@ -2,7 +2,7 @@ import type { Level } from "@/features/game/types/level";
 import type { Difficulty } from "@/features/game/types/difficulty";
 import { LEVELS } from "@/features/game/constants/levels";
 import { DIFFICULTIES } from "@/features/game/constants/difficulties";
-import ResultInfoCard from "@/features/game/components/result/ResultInfoCard";
+import ResultInfoCard from "@/features/game/components/result/result-details/ResultInfoCard";
 import LevelIcon from "@/shared/icons/LevelIcon";
 import StarIcon from "@/shared/icons/StarIcon";
 

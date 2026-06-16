@@ -36,11 +36,9 @@ export type GameAction =
         completedAt: number;
       };
     }
-  |
-    {
+  | {
       type: typeof GAME_ACTIONS.HistoryOpened;
     }
   | {
-    type: typeof GAME_ACTIONS.SettingsOpened;
+      type: typeof GAME_ACTIONS.SettingsOpened;
     };
-
