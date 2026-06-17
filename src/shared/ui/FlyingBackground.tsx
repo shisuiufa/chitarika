@@ -34,7 +34,7 @@ export default function FlyingBackground() {
           className="
            absolute h-auto
             animate-float object-contain
-            opacity-40 sm:opacity-50 md:opacity-55
+            opacity-40
             will-change-transform
             motion-reduce:animate-none
             w-[clamp(calc(var(--bg-size)*0.55px),8vw,calc(var(--bg-size)*1px))]
