@@ -3,6 +3,7 @@ import bg2 from "@/assets/images/bgs/2.png";
 import bg3 from "@/assets/images/bgs/3.png";
 import bg4 from "@/assets/images/bgs/4.png";
 import bg5 from "@/assets/images/bgs/5.png";
+import type { CSSProperties } from "react";
 
 const images = [bg1, bg2, bg3, bg4, bg5] as const;
 
@@ -31,19 +32,22 @@ export default function FlyingBackground() {
           src={images[item.image]}
           alt=""
           className="
-            absolute h-auto -translate-x-1/2 -translate-y-1/2
-            animate-float object-contain opacity-55
+           absolute h-auto
+            animate-float object-contain
+            opacity-40 sm:opacity-50 md:opacity-55
             will-change-transform
             motion-reduce:animate-none
-            max-md:opacity-40
+            w-[clamp(calc(var(--bg-size)*0.55px),8vw,calc(var(--bg-size)*1px))]
           "
-          style={{
-            top: `${item.top}%`,
-            left: `${item.left}%`,
-            width: `${item.size}px`,
-            animationDuration: `${item.duration}s`,
-            animationDelay: `${item.delay}s`,
-          }}
+          style={
+            {
+              top: `${item.top}%`,
+              left: `${item.left}%`,
+              "--bg-size": item.size,
+              animationDuration: `${item.duration}s`,
+              animationDelay: `${item.delay}s`,
+            } as CSSProperties
+          }
         />
       ))}
     </div>

@@ -29,7 +29,7 @@ export default function ResultActions({
           <span className="translate-y-0.5 leading-none">Повторить</span>
         </Button>
 
-        <div className="relative z-101 flex gap-6 w-full">
+        <div className="relative z-101 flex flex-wrap gap-3 md:gap-7 w-full">
           <Button
             onClick={onOpenSettings}
             size="md"

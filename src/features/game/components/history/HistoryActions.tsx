@@ -13,29 +13,27 @@ export default function GameHistoryActions({
   onRestart,
 }: HistoryActions) {
   return (
-    <div className={`grid gap-4 ${className}`}>
-      <div className="flex gap-5">
-        <Button
-          size="lg"
-          variant="secondary"
-          className="w-full uppercase"
-          onClick={onBackToResult}
-          icon={<ArrowLeft aria-hidden="true" />}
-          iconPosition="left"
-        >
-          Результат
-        </Button>
+    <div className={`flex flex-wrap gap-3 md:gap-5 ${className}`}>
+      <Button
+        size="lg"
+        variant="secondary"
+        className="flex-1 uppercase"
+        onClick={onBackToResult}
+        icon={<ArrowLeft aria-hidden="true" />}
+        iconPosition="left"
+      >
+        Результат
+      </Button>
 
-        <Button
-          size="lg"
-          className="w-full uppercase"
-          onClick={onRestart}
-          icon={<RotateCcw aria-hidden="true" />}
-          iconPosition="left"
-        >
-          ПОВТОРИТЬ
-        </Button>
-      </div>
+      <Button
+        size="lg"
+        className="flex-1 uppercase"
+        onClick={onRestart}
+        icon={<RotateCcw aria-hidden="true" />}
+        iconPosition="left"
+      >
+        ПОВТОРИТЬ
+      </Button>
     </div>
   );
 }
