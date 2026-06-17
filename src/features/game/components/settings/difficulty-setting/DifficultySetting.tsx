@@ -14,8 +14,8 @@ export default function DifficultySetting({
   onSelectDifficulty,
 }: DifficultySettingProps) {
   return (
-    <Card innerClassName="p-6 bg-vanilla" className={className}>
-      <h1 className="text-2xl mb-6">Сложность</h1>
+    <Card innerClassName="p-5 sm:p-6 bg-vanilla" className={className}>
+      <h1 className="text-lg sm:text-xl md:text-2xl mb-3 sm:mb-6">Сложность</h1>
 
       <DifficultySelector
         selectedDifficulty={selectedDifficulty}

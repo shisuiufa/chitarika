@@ -3,7 +3,6 @@ import type {
   LevelOption as LevelOptionType,
 } from "@/features/game/types/level";
 import Button from "@/shared/ui/Button";
-import { SELECTABLE_BUTTON_VARIANTS } from "@/shared/ui/Button/button-variants";
 
 type LevelOptionProps = {
   level: LevelOptionType;
@@ -22,29 +21,24 @@ export default function LevelOption({
 
   const Icon = icon as IconComponent;
 
-  const btnClass = isSelected
-    ? SELECTABLE_BUTTON_VARIANTS.selected
-    : SELECTABLE_BUTTON_VARIANTS.default;
+  const variant = isSelected ? "accent" : "cream";
 
   return (
     <Button
+      variant={variant}
       size="lg"
-      className={`
-            flex flex-col justify-between items-center p-5
-            font-bold normal-case!
-            ${btnClass}
-            `}
+      className="flex flex-col justify-between items-center font-bold normal-case"
       onClick={onClick}
     >
-      <div className="mb-3">
+      <div className="mb-1 sm:mb-3">
         {isTextIcon ? (
-          <span className="text-3xl">{icon}</span>
+          <span className="text-lg sm:text-3xl">{icon}</span>
         ) : (
-          <Icon size="w-9 h-9" />
+          <Icon size="w-4 h-4 sm:w-9 sm:h-9" />
         )}
       </div>
 
-      <h1 className="text-base">{title}</h1>
+      <h1 className="text-sm sm:text-base">{title}</h1>
     </Button>
   );
 }

@@ -1,7 +1,8 @@
 import { useEffect, useReducer, useState } from "react";
 import GameSettings from "@/features/game/components/settings/GameSettings";
-import GameScreen from "@/features/game/components/play/GameScreen";
+import GamePlay from "@/features/game/components/play/GamePlay";
 import GameResult from "@/features/game/components/result/GameResult";
+import GameHistory from "@/features/game/components/history/GameHistory";
 import { SCREENS } from "./features/game/constants/screens";
 import AppLoader from "@/shared/ui/AppLoader";
 import GameLoading from "@/features/game/components/loading/GameLoading";
@@ -12,6 +13,7 @@ import {
 import { GAME_ACTIONS } from "@/features/game/constants/game-actions";
 import type { GameSettingsState } from "@/features/game/types/setting";
 import type { ReadingTask } from "@/features/game/types/reading";
+import FlyingBackground from "@/shared/ui/FlyingBackground";
 
 function App() {
   const [isAppLoading, setIsAppLoading] = useState(true);
@@ -97,49 +99,76 @@ function App() {
     });
   };
 
+  const handleOpenResult = () => {
+    dispatch({
+      type: GAME_ACTIONS.ResultOpened,
+    });
+  };
+
+  const handleOpenHistory = () => {
+    dispatch({
+      type: GAME_ACTIONS.HistoryOpened,
+    });
+  };
+
   if (isAppLoading) {
     return <AppLoader />;
   }
 
   return (
-    <div className="w-screen h-screen flex flex-col justify-center items-center px-6 py-20">
-      {gameState.screen === SCREENS.Settings && (
-        <GameSettings
-          settings={gameState.settings}
-          onStart={handleStartGame}
-          onChangeSettings={handleChangeSettings}
-        />
-      )}
+    <div className="relative w-screen h-screen">
+      <FlyingBackground />
 
-      {gameState.screen === SCREENS.Game && (
-        <GameScreen
-          settings={gameState.settings}
-          tasks={gameState.tasks}
-          currentTaskIndex={gameState.currentTaskIndex}
-          onNextTask={handleNextTask}
-          onComplete={handleGameComplete}
-        />
-      )}
+      <div className="relative z-10 w-full h-full scroll overflow-y-auto px-2 py-4 md:px-6 md:py-10 flex flex-col items-center">
+        {gameState.screen === SCREENS.Settings && (
+          <GameSettings
+            settings={gameState.settings}
+            onStart={handleStartGame}
+            onChangeSettings={handleChangeSettings}
+          />
+        )}
 
-      {gameState.screen === SCREENS.Result && (
-        <GameResult
-          startedAt={gameState.startedAt ?? 0}
-          completedAt={gameState.completedAt ?? 0}
-          tasks={gameState.tasks}
-          level={gameState.settings.level}
-          difficulty={gameState.settings.difficulty}
-          onOpenSettings={handleOpenSettings}
-          onRestart={handleStartGame}
-        />
-      )}
+        {gameState.screen === SCREENS.Game && (
+          <GamePlay
+            settings={gameState.settings}
+            tasks={gameState.tasks}
+            currentTaskIndex={gameState.currentTaskIndex}
+            onNextTask={handleNextTask}
+            onComplete={handleGameComplete}
+          />
+        )}
 
-      {gameState.screen === SCREENS.Loading && (
-        <GameLoading
-          settings={gameState.settings}
-          onComplete={handleLoadingComplete}
-          onOpenSettings={handleOpenSettings}
-        />
-      )}
+        {gameState.screen === SCREENS.Result && (
+          <GameResult
+            startedAt={gameState.startedAt ?? 0}
+            completedAt={gameState.completedAt ?? 0}
+            tasks={gameState.tasks}
+            level={gameState.settings.level}
+            difficulty={gameState.settings.difficulty}
+            onOpenSettings={handleOpenSettings}
+            onOpenHistory={handleOpenHistory}
+            onRestart={handleStartGame}
+          />
+        )}
+
+        {gameState.screen === SCREENS.History && (
+          <GameHistory
+            tasks={gameState.tasks}
+            level={gameState.settings.level}
+            difficulty={gameState.settings.difficulty}
+            onBackToResult={handleOpenResult}
+            onRestart={handleStartGame}
+          />
+        )}
+
+        {gameState.screen === SCREENS.Loading && (
+          <GameLoading
+            settings={gameState.settings}
+            onComplete={handleLoadingComplete}
+            onOpenSettings={handleOpenSettings}
+          />
+        )}
+      </div>
     </div>
   );
 }

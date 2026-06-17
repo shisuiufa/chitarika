@@ -20,5 +20,9 @@ export default function LevelSelector({
     />
   ));
 
-  return <div className="grid grid-cols-4 gap-4">{levelsList}</div>;
+  return (
+    <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-4">
+      {levelsList}
+    </div>
+  );
 }

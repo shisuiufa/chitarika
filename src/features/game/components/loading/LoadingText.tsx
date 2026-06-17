@@ -40,7 +40,7 @@ export default function LoadingText({
   return (
     <p
       className={`
-        text-center text-2xl font-semibold text-brown
+        text-center text-base md:text-xl lg:text-2xl font-semibold text-brown
         transition-opacity duration-150 ease-out
         ${isVisible ? "opacity-100" : "opacity-0"}
         ${className}

@@ -68,6 +68,20 @@ export function gameReducer(state: GameState, action: GameAction): GameState {
       };
     }
 
+    case GAME_ACTIONS.ResultOpened: {
+      return {
+        ...state,
+        screen: SCREENS.Result,
+      };
+    }
+
+    case GAME_ACTIONS.HistoryOpened: {
+      return {
+        ...state,
+        screen: SCREENS.History,
+      };
+    }
+
     case GAME_ACTIONS.SettingsOpened: {
       return initialGameState;
     }

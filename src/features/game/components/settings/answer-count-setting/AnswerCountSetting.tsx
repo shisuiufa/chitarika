@@ -13,10 +13,13 @@ export default function AnswerCountSetting({
   onSelectCountAnswers,
 }: AnswerCountSettingProps) {
   return (
-    <Card className={`${className}`} innerClassName="p-6 bg-vanilla">
-      <h1 className="text-2xl">Количество ответов</h1>
+    <Card
+      className={`${className}`}
+      innerClassName="p-5 sm:p-6 bg-vanilla flex flex-col"
+    >
+      <h1 className="text-lg sm:text-xl md:text-2xl">Количество ответов</h1>
 
-      <p className="font-nunito-sans font-medium text-lg mb-6">
+      <p className="font-nunito-sans font-medium text-2sm sm:text-md md:text-lg mb-3 sm:mb-6">
         Сколько вариантов показывать
       </p>
 

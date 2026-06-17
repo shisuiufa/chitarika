@@ -73,11 +73,9 @@ export default function GameLoading({
   }, [settings]);
 
   return (
-    <>
-      <div className="w-full lg:w-[50%]">
-        <LoadingText value={value} className="mb-4" />
-        <ProgressBar value={value} showPercent={true} />
-      </div>
-    </>
+    <div className="w-full h-full lg:w-[90%] xl:w-[70%] flex flex-col justify-center items-center">
+      <LoadingText value={value} className="w-full mb-4" />
+      <ProgressBar value={value} showPercent={true} className="w-full" />
+    </div>
   );
 }

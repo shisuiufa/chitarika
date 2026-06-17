@@ -28,7 +28,7 @@ export default function AnswerCountSelector({
   return (
     <Card
       className="w-full rounded-full"
-      innerClassName="p-5 rounded-full flex gap-5 justify-between items-center bg-cream"
+      innerClassName="p-3 sm:p-3 md:p-5  rounded-full flex gap-3 sm:gap-5 justify-between items-center bg-cream"
     >
       <CircleButton
         onClick={handleDecrease}
@@ -37,7 +37,9 @@ export default function AnswerCountSelector({
         -
       </CircleButton>
 
-      <h1 className="text-5xl">{selectedCount}</h1>
+      <h1 className="text-xl sm:text-2xl lg:text-3xl xl:text-5xl">
+        {selectedCount}
+      </h1>
 
       <CircleButton
         onClick={handleIncrease}

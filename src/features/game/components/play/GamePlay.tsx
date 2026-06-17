@@ -1,5 +1,5 @@
 import TaskCard from "@/features/game/components/play/TaskCard";
-import GameHeader from "@/features/game/components/play/GameHeader";
+import PlayHeader from "@/features/game/components/play/PlayHeader";
 import type { GameSettingsState } from "@/features/game/types/setting";
 import type { ReadingTask } from "@/features/game/types/reading";
 
@@ -11,7 +11,7 @@ type GameStateProps = {
   onComplete: () => void;
 };
 
-export default function GameScreen({
+export default function GamePlay({
   settings,
   tasks,
   currentTaskIndex,
@@ -31,8 +31,8 @@ export default function GameScreen({
   };
 
   return (
-    <div className="w-full lg:w-[75%] flex h-full flex-col justify-center gap-7">
-      <GameHeader
+    <div className="w-full lg:w-[90%] xl:w-[70%] flex h-full flex-col justify-center gap-5 md:gap-7">
+      <PlayHeader
         level={settings.level}
         current={currentTaskIndex + 1}
         total={tasks.length}
@@ -44,6 +44,7 @@ export default function GameScreen({
         task={currentTask}
         onClick={handleClick}
         btnText={buttonText}
+        isLastTask={lastTask}
       />
     </div>
   );

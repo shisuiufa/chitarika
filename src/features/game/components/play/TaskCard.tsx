@@ -1,10 +1,10 @@
 import Card from "@/shared/ui/Card";
 import { LEVELS } from "@/features/game/constants/levels";
-
 import type { ReadingTask } from "@/features/game/types/reading";
 import type { Level } from "@/features/game/types/level";
-import ArrowRightIcon from "@/shared/icons/ArrowRightIcon";
 import Button from "@/shared/ui/Button";
+import HighlightedText from "@/features/game/components/HighlightedText";
+import { ArrowRight, Flag } from "lucide-react";
 
 type TaskCardProps = {
   className?: string;
@@ -12,13 +12,18 @@ type TaskCardProps = {
   level: Level;
   onClick: () => void;
   btnText: string;
+  isLastTask: boolean;
 };
 
 const textClasses: Record<Level, string> = {
-  [LEVELS.Syllables]: "text-9xl lg:text-[10rem] font-bold tracking-wide",
-  [LEVELS.Words]: "text-7xl lg:text-9xl font-semibold",
-  [LEVELS.Sentences]: "text-3xl lg:text-5xl font-medium leading-relaxed",
-  [LEVELS.Texts]: "text-2xl lg:text-4xl font-medium leading-relaxed",
+  [LEVELS.Syllables]:
+    "text-6xl md:text-7xl lg:text-9xl xl:text-[10rem] font-bold tracking-wide",
+  [LEVELS.Words]:
+    "text-2xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-semibold",
+  [LEVELS.Sentences]:
+    "text-md sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-medium leading-relaxed",
+  [LEVELS.Texts]:
+    "text-md sm:text-xl md:text-2xl lg:text-2xl xl:text-3xl font-medium leading-relaxed",
 };
 
 const taskPatternStyle = {
@@ -26,83 +31,57 @@ const taskPatternStyle = {
     "repeating-linear-gradient(0deg, transparent 0, transparent 62px, rgba(224, 208, 178, 0.35) 63px, transparent 64px)",
 };
 
-function renderHighlightedText(value: string) {
-  return value.split(/(\[[^\]]+])/g).map((part, index) => {
-    const isHighlighted = part.startsWith("[") && part.endsWith("]");
-
-    if (!isHighlighted) {
-      return part;
-    }
-
-    return (
-      <mark
-        key={index}
-        className="
-          box-decoration-clone rounded-xl bg-yellow px-2 py-1
-          text-[#3B2A1A] shadow-[0_4px_0_#FD9D1A]
-        "
-      >
-        {part.slice(1, -1)}
-      </mark>
-    );
-  });
-}
-
 export default function TaskCard({
   className,
   task,
   level,
   onClick,
   btnText,
+  isLastTask = false,
 }: TaskCardProps) {
   const isText = level === LEVELS.Texts;
+  const ButtonIcon = isLastTask ? Flag : ArrowRight;
 
   return (
     <Card
       className={className}
-      innerClassName="
-        relative flex flex-col items-center justify-center overflow-hidden
-        p-8 lg:p-14
-      "
+      innerClassName="relative flex flex-col items-center gap-3 md:gap-6 justify-between overflow-hidden p-4 md:p-8"
     >
-      <div
-        className="grow pointer-events-none absolute inset-0 opacity-80"
-        style={taskPatternStyle}
-      />
+      <div className="grow relative w-full h-full flex justify-center items-center">
+        <div
+          className="grow pointer-events-none absolute inset-0 opacity-80"
+          style={taskPatternStyle}
+        />
 
-      <div
-        className="
-          pointer-events-none absolute inset-5 rounded-4xl
+        <div
+          className="
+          pointer-events-none absolute inset-0 rounded-4xl
           border-2 border-dashed border-sand/60
         "
-      />
+        />
 
-      <div className="relative h-full z-10 flex flex-col gap-2 justify-center items-center">
-        <div className="grow flex justify-center items-center">
-          <div
-            className={` ${isText ? "mx-auto max-w-5xl" : "mx-auto max-w-full"}`}
-          >
-            <p
-              className={`
+        <div
+          className={`relative z-100 px-4 md:px-8 ${isText ? "mx-auto max-w-5xl" : "mx-auto max-w-full"}`}
+        >
+          <p
+            className={`
             wrap-break-word text-center font-nunito-sans text-[#3B2A1A]
-            drop-shadow-[0_6px_0_rgba(224,208,178,0.45)]
             ${textClasses[level]}
           `}
-            >
-              {renderHighlightedText(task.value)}
-            </p>
-          </div>
+          >
+            {<HighlightedText value={task.value} />}
+          </p>
         </div>
-
-        <Button
-          size="md"
-          className="mx-auto min-w-52 uppercase"
-          onClick={onClick}
-        >
-          <span className="translate-y-0.5 leading-none">{btnText}</span>
-          <ArrowRightIcon />
-        </Button>
       </div>
+
+      <Button
+        size="md"
+        className="mx-auto uppercase"
+        onClick={onClick}
+        icon={<ButtonIcon aria-hidden="true" />}
+      >
+        <span className="translate-y-0.5 leading-none">{btnText}</span>
+      </Button>
     </Card>
   );
 }

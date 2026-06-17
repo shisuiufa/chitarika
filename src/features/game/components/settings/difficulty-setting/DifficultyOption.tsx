@@ -1,6 +1,5 @@
 import type { DifficultyOption as DifficultyOptionType } from "@/features/game/types/difficulty";
 import Button from "@/shared/ui/Button";
-import { SELECTABLE_BUTTON_VARIANTS } from "@/shared/ui/Button/button-variants";
 import StarIcon from "@/shared/icons/StarIcon";
 
 type DifficultyOptionProps = {
@@ -14,16 +13,14 @@ export default function DifficultyOption({
   onClick,
   isSelected = false,
 }: DifficultyOptionProps) {
-  const btnClass = isSelected
-    ? SELECTABLE_BUTTON_VARIANTS.selected
-    : SELECTABLE_BUTTON_VARIANTS.default;
+  const variant = isSelected ? "accent" : "cream";
 
   const listStars = [];
 
   for (let i = 0; i < option.stars; i++) {
     listStars.push(
       <StarIcon
-        className={`${isSelected ? "text-brown" : "text-yellow"} size-5`}
+        className={`${isSelected ? "text-brown" : "text-yellow"} size-3 sm:size-5`}
         key={i}
       />,
     );
@@ -31,8 +28,9 @@ export default function DifficultyOption({
 
   return (
     <Button
+      variant={variant}
       size="lg"
-      className={`p-6 normal-case! justify-between! ${btnClass}`}
+      className={`normal-case! justify-between!`}
       onClick={() => onClick(option.id)}
     >
       {option.title}

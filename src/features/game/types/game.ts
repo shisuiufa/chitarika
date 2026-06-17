@@ -37,6 +37,9 @@ export type GameAction =
       };
     }
   | {
+      type: typeof GAME_ACTIONS.ResultOpened;
+    }
+  | {
       type: typeof GAME_ACTIONS.HistoryOpened;
     }
   | {
