@@ -66,7 +66,7 @@ export default function GameResult({
             <span className="font-nunito-sans text-vh-[30px] font-extrabold text-[#7B6C4E] leading-none">
               Прочитано
             </span>
-            <strong className="mt-vh-[10px] block font-comfortaa text-vh-[40px] font-extrabold text-dark-brown leading-none">
+            <strong className="mt-vh-[15px] block font-comfortaa text-vh-[40px] font-extrabold text-dark-brown leading-none">
               {readUnitCount} {readingUnitLabel}
             </strong>
           </Card>
