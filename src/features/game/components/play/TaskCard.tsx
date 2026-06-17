@@ -17,13 +17,13 @@ type TaskCardProps = {
 
 const textClasses: Record<Level, string> = {
   [LEVELS.Syllables]:
-    "text-6xl md:text-7xl lg:text-9xl xl:text-[10rem] font-bold tracking-wide",
+    "text-vh-[250px] font-bold tracking-wide",
   [LEVELS.Words]:
-    "text-2xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-semibold",
+    "text-vh-[120px] font-semibold",
   [LEVELS.Sentences]:
-    "text-md sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-medium leading-relaxed",
+    "text-vh-[45px] font-medium leading-relaxed",
   [LEVELS.Texts]:
-    "text-md sm:text-xl md:text-2xl lg:text-2xl xl:text-3xl font-medium leading-relaxed",
+    "text-vh-[45px] font-medium leading-relaxed",
 };
 
 const taskPatternStyle = {
@@ -39,13 +39,12 @@ export default function TaskCard({
   btnText,
   isLastTask = false,
 }: TaskCardProps) {
-  const isText = level === LEVELS.Texts;
   const ButtonIcon = isLastTask ? Flag : ArrowRight;
 
   return (
     <Card
       className={className}
-      innerClassName="relative flex flex-col items-center gap-3 md:gap-6 justify-between overflow-hidden p-4 md:p-8"
+      innerClassName="relative flex flex-col items-center gap-vh-[30px] justify-between overflow-hidden p-vh-[35px]"
     >
       <div className="grow relative w-full h-full flex justify-center items-center">
         <div
@@ -61,7 +60,7 @@ export default function TaskCard({
         />
 
         <div
-          className={`relative z-100 px-4 md:px-8 ${isText ? "mx-auto max-w-5xl" : "mx-auto max-w-full"}`}
+          className={`relative z-100 p-vh-[30px] mx-auto`}
         >
           <p
             className={`
@@ -75,7 +74,7 @@ export default function TaskCard({
       </div>
 
       <Button
-        size="md"
+        size="lg"
         className="mx-auto uppercase"
         onClick={onClick}
         icon={<ButtonIcon aria-hidden="true" />}

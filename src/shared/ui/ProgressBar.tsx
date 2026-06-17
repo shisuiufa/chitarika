@@ -13,43 +13,57 @@ type ProgressBarProps = {
   showStarMarker?: boolean;
 };
 
+type ProgressBarSizeClasses = {
+  wrapper: string;
+  bar: string;
+  marker: string;
+  star: string;
+  percent: string;
+};
+
 const getProgressColor = (percent: number) => {
   if (percent >= 100) return "#5FEB78";
   if (percent >= 75) return "#A8F044";
   if (percent >= 50) return "#FFD43B";
+
   return "#FD9D1A";
 };
 
-const sizeClasses: Record<
-  ProgressBarSize,
-  {
-    wrapper: string;
-    bar: string;
-    marker: string;
-    star: string;
-    percent: string;
-  }
-> = {
+const sizeClasses: Record<ProgressBarSize, ProgressBarSizeClasses> = {
   sm: {
-    wrapper: "px-3 py-2 rounded-full",
-    bar: "h-5",
-    marker: "size-7",
-    star: "size-7",
-    percent: "mt-1 text-xs",
+    wrapper: `
+      px-vw-[12px]
+      py-vh-[8px]
+      rounded-full
+    `,
+    bar: "h-vh-[20px]",
+    marker: "size-vh-[28px]",
+    star: "size-vh-[28px]",
+    percent: "mt-vh-[4px] text-vh-[12px]",
   },
+
   md: {
-    wrapper: "px-2 py-1 md:px-3 md:py-2 rounded-full",
-    bar: "h-3 md:h-6",
-    marker: "size-4 md:size-8",
-    star: "size-4 md:size-8",
-    percent: "mt-2 text-sm md:text-base",
+    wrapper: `
+      px-vw-[12px]
+      py-vh-[8px]
+      rounded-full
+    `,
+    bar: "h-vh-[24px]",
+    marker: "size-vh-[32px]",
+    star: "size-vh-[32px]",
+    percent: "mt-vh-[8px] text-vh-[16px]",
   },
+
   lg: {
-    wrapper: "px-3 py-2 md:px-4 md:py-3 rounded-full",
-    bar: "h-4 md:h-7",
-    marker: "size-7 md:size-9",
-    star: "size-7 md:size-9",
-    percent: "mt-3 text-lg",
+    wrapper: `
+      px-vw-[16px]
+      py-vh-[12px]
+      rounded-full
+    `,
+    bar: "h-vh-[28px]",
+    marker: "size-vh-[36px]",
+    star: "size-vh-[36px]",
+    percent: "mt-vh-[12px] text-vh-[18px]",
   },
 };
 
@@ -78,7 +92,13 @@ export default function ProgressBar({
     <div className={className}>
       <Card innerClassName={classes.wrapper} size={size}>
         <div
-          className={`relative w-full rounded-full bg-vanilla ${classes.bar}`}
+          className={`
+            relative
+            w-full
+            rounded-full
+            bg-vanilla
+            ${classes.bar}
+          `}
         >
           <div
             className="
@@ -121,14 +141,21 @@ export default function ProgressBar({
                 color: fillColor,
               }}
             >
-              <img className={classes.star} src={StarFilled} alt="star" />
+              <img
+                className={classes.star}
+                src={StarFilled}
+                alt=""
+                aria-hidden="true"
+              />
             </div>
           )}
         </div>
       </Card>
 
       {showPercent && (
-        <h2 className={`text-center ${classes.percent}`}>{percent} %</h2>
+        <div className={`text-center ${classes.percent}`}>
+          {percent} %
+        </div>
       )}
     </div>
   );

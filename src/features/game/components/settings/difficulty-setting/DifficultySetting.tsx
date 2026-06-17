@@ -1,6 +1,7 @@
 import DifficultySelector from "@/features/game/components/settings/difficulty-setting/DifficultySelector";
 import Card from "@/shared/ui/Card";
 import type { Difficulty } from "@/features/game/types/difficulty";
+import { ChartNoAxesColumnIncreasing  } from "lucide-react";
 
 type DifficultySettingProps = {
   className?: string;
@@ -14,9 +15,18 @@ export default function DifficultySetting({
   onSelectDifficulty,
 }: DifficultySettingProps) {
   return (
-    <Card innerClassName="p-5 sm:p-6 bg-vanilla" className={className}>
-      <h1 className="text-lg sm:text-xl md:text-2xl mb-3 sm:mb-6">Сложность</h1>
+    <Card innerClassName="p-vh-[35px] bg-vanilla" className={className}>
+      <div className="mb-vh-[20px] flex items-center gap-vw-[10px]">
+        <ChartNoAxesColumnIncreasing
+          className="size-vh-[30px] text-gold-brown"
+          strokeWidth={2.5}
+          aria-hidden="true"
+        />
 
+        <h2 className="text-vh-[25px] leading-none">
+          Сложность
+        </h2>
+      </div>
       <DifficultySelector
         selectedDifficulty={selectedDifficulty}
         onSelectDifficulty={onSelectDifficulty}

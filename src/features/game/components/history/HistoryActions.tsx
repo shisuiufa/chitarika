@@ -13,11 +13,11 @@ export default function GameHistoryActions({
   onRestart,
 }: HistoryActions) {
   return (
-    <div className={`flex flex-wrap gap-3 md:gap-5 ${className}`}>
+    <div className={`flex flex-wrap gap-vh-[30px] ${className}`}>
       <Button
         size="lg"
         variant="secondary"
-        className="flex-1 uppercase"
+        className="flex-1 uppercase justify-center"
         onClick={onBackToResult}
         icon={<ArrowLeft aria-hidden="true" />}
         iconPosition="left"
@@ -27,7 +27,7 @@ export default function GameHistoryActions({
 
       <Button
         size="lg"
-        className="flex-1 uppercase"
+        className="flex-1 uppercase justify-center"
         onClick={onRestart}
         icon={<RotateCcw aria-hidden="true" />}
         iconPosition="left"

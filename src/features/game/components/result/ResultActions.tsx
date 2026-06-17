@@ -16,12 +16,12 @@ export default function ResultActions({
 }: ResultActionsProps) {
   return (
     <div
-      className={`border-t-2 border-dashed border-sand/70 pt-3 md:pt-6 ${className}`}
+      className={`${className}`}
     >
-      <div className="mx-auto flex flex-col gap-3 md:gap-7 w-full lg:w-[70%] xl:w-[50%]">
+      <div className="mx-auto flex flex-col gap-vh-[35px] w-full lg:w-[50%]">
         <Button
           size="lg"
-          className="relative z-100 w-full uppercase"
+          className="relative z-100 w-full uppercase flex items-center justify-center"
           onClick={onRestart}
           icon={<RotateCcw aria-hidden="true" />}
           iconPosition="left"
@@ -29,12 +29,12 @@ export default function ResultActions({
           <span className="translate-y-0.5 leading-none">Повторить</span>
         </Button>
 
-        <div className="relative z-101 flex flex-wrap gap-3 md:gap-7 w-full">
+        <div className="relative z-101 flex flex-wrap gap-vh-[35px] w-full">
           <Button
             onClick={onOpenSettings}
-            size="md"
+            size="lg"
             variant="secondary"
-            className="uppercase flex-1"
+            className="uppercase flex-1 flex items-center justify-center"
             icon={<Settings aria-hidden="true" />}
             iconPosition="left"
           >
@@ -42,9 +42,9 @@ export default function ResultActions({
           </Button>
 
           <Button
-            size="md"
+            size="lg"
             variant="secondary"
-            className="uppercase flex-1"
+            className="uppercase flex-1 flex items-center justify-center"
             onClick={onOpenHistory}
             icon={<History aria-hidden="true" />}
             iconPosition="left"

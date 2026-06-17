@@ -7,7 +7,7 @@ export default function ResultStars({
 }) {
   return (
     <div
-      className={`flex items-end justify-center gap-2 lg:gap-4 ${className}`}
+      className={`flex items-end justify-center gap-vw-[20px] ${className}`}
     >
       {Array.from({ length: 5 }).map((_, index) => (
         <div
@@ -19,8 +19,8 @@ export default function ResultStars({
         >
           <img
             className="
-                    result-star-pop size-8 md:size-10 select-none
-                    drop-shadow-[0_6px_0_#FD9D1A] lg:size-14
+                    result-star-pop size-vh-[50px] select-none
+                    drop-shadow-[0_6px_0_#FD9D1A]
                   "
             style={{ animationDelay: `${index * 120}ms` }}
             src={starFilled}

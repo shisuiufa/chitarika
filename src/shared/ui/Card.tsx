@@ -1,7 +1,6 @@
 import type { ReactNode } from "react";
 
 type CardVariant = "default" | "yellow" | "orange" | "green";
-
 type CardSize = "sm" | "md" | "lg";
 
 type CardProps = {
@@ -12,70 +11,83 @@ type CardProps = {
   innerClassName?: string;
 };
 
-const sizeClasses: Record<
-  CardSize,
-  {
-    outer: string;
-    inner: string;
-  }
-> = {
+type CardClasses = {
+  outer: string;
+  inner: string;
+};
+
+const sizeClasses: Record<CardSize, CardClasses> = {
   sm: {
-    outer: "rounded-3xl pb-1",
-    inner: "rounded-3xl border-1",
+    outer: `
+      rounded-vh-[24px]
+      pb-vh-[4px]
+    `,
+    inner: `
+      rounded-vh-[24px]
+      border-vh-[1px]
+    `,
   },
+
   md: {
-    outer: "rounded-3xl pb-1.5",
-    inner: "rounded-3xl border-2",
+    outer: `
+      rounded-vh-[24px]
+      pb-vh-[6px]
+    `,
+    inner: `
+      rounded-vh-[24px]
+      border-vh-[2px]
+    `,
   },
+
   lg: {
-    outer: "rounded-4xl pb-2",
-    inner: "rounded-4xl border-2",
+    outer: `
+      rounded-vh-[32px]
+      pb-vh-[8px]
+    `,
+    inner: `
+      rounded-vh-[32px]
+      border-vh-[2px]
+    `,
   },
 };
 
-const variantClasses: Record<
-  CardVariant,
-  {
-    outer: string;
-    inner: string;
-  }
-> = {
+const variantClasses: Record<CardVariant, CardClasses> = {
   default: {
     outer: "bg-sand",
     inner: `
-      bg-[#FFF3D6]
       border-sand
       border-b-0
+      bg-[#FFF3D6]
     `,
   },
 
   yellow: {
     outer: "bg-transparent",
     inner: `
+      border-[#F3D35C]
       bg-[#FFF8DD]
       text-[#8A6800]
-      border-[#F3D35C]
-      shadow-[0_6px_0_#E6C554]
+      shadow-[0_0.5556vh_0_#E6C554]
     `,
   },
 
   orange: {
     outer: "bg-transparent",
     inner: `
+      border-[#F4B468]
       bg-[#FFF0DC]
       text-[#9A5700]
-      border-[#F4B468]
-      shadow-[0_6px_0_#EAA65A]
+      shadow-[0_0.5556vh_0_#EAA65A]
     `,
   },
 
   green: {
     outer: "bg-transparent",
     inner: `
+      border-[#7FDE98]
       bg-[#EAFBED]
       text-[#008A3D]
-      border-[#7FDE98]
-      shadow-[0_6px_0_#6ED489]
+      shadow-[0_0.5556vh_0_#6ED489]
     `,
   },
 };

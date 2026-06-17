@@ -14,25 +14,25 @@ export default function HistorySummary({
   return (
     <Card
       className={className}
-      innerClassName="px-5 py-4 bg-cream flex justify-between items-center"
+      innerClassName="p-vh-[30px] bg-cream flex justify-between items-center"
     >
       <div>
-        <span className="font-nunito-sans text-sm font-extrabold text-[#7B6C4E]">
+        <span className="font-nunito-sans text-vh-[18px] font-extrabold text-brown">
           Всего в истории
         </span>
 
-        <strong className="block font-comfortaa text-2xl font-extrabold text-dark-brown">
+        <strong className="block font-nunito-sans text-vh-[20px] font-extrabold text-dark-brown mt-vh-[8px] leading-none">
           {count} {getTaskCountLabel(count)}
         </strong>
       </div>
 
       <div
         className="
-          flex size-14 shrink-0 items-center justify-center rounded-3xl
-          bg-[#BDF4C8] text-[#008A3D] shadow-[0_4px_0_#6ED489]
+          flex size-vh-[60px] shrink-0 items-center justify-center rounded-full
+          bg-[#BDF4C8] text-[#008A3D]
         "
       >
-        <ReadIcon className="size-8" />
+        <ReadIcon className="size-vh-[30px]"/>
       </div>
     </Card>
   );

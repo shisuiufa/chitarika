@@ -44,15 +44,15 @@ export default function GameResult({
   const readingUnitLabel = getReadingUnitLabel(readUnitCount, level);
 
   return (
-    <div className="flex grow w-full lg:w-[90%] xl:w-[70%] flex-col">
-      <Card
-        className="w-full h-full"
-        innerClassName="relative overflow-hidden p-5 sm:p-6 lg:p-10"
-      >
-        <div className="w-full h-full flex flex-col gap-3 md:gap-5 justify-between">
-          <ResultStars className="mb-4" />
+    <Card
+      className="w-full h-full"
+      innerClassName="relative overflow-hidden p-vh-[40px]"
+    >
+      <div className="w-full h-full flex flex-col justify-between">
+        <div className="grow flex flex-col gap-vh-[35px] border-b-2 border-dashed border-sand/70  pb-vh-[35px] mb-vh-[35px]">
+          <ResultStars className="mb-vh-[15px]" />
 
-          <h1 className="text-2xl md:text-3xl lg:text-[4vh] font-extrabold text-brown text-center">
+          <h1 className="text-vh-[45px] font-extrabold text-brown text-center leading-none">
             Отличная работа!
           </h1>
 
@@ -60,12 +60,13 @@ export default function GameResult({
 
           <Card
             size="lg"
-            innerClassName="bg-cream px-2 py-3 md:px-4 md:py-4 text-center"
+            className="grow"
+            innerClassName="bg-cream p-vh-[30px] text-center flex flex-col justify-center items-center"
           >
-            <span className="font-nunito-sans text-lg sm:text-xl lg:text-2xl font-extrabold text-[#7B6C4E]">
+            <span className="font-nunito-sans text-vh-[30px] font-extrabold text-[#7B6C4E] leading-none">
               Прочитано
             </span>
-            <strong className="mt-2 block font-comfortaa text-2xl sm:text-3xl lg:text-5xl font-extrabold leading-tight text-dark-brown">
+            <strong className="mt-vh-[10px] block font-comfortaa text-vh-[40px] font-extrabold text-dark-brown leading-none">
               {readUnitCount} {readingUnitLabel}
             </strong>
           </Card>
@@ -76,14 +77,14 @@ export default function GameResult({
             level={level}
             completedTaskCount={tasks.length}
           />
-
-          <ResultActions
-            onRestart={onRestart}
-            onOpenSettings={onOpenSettings}
-            onOpenHistory={onOpenHistory}
-          />
         </div>
-      </Card>
-    </div>
+
+        <ResultActions
+          onRestart={onRestart}
+          onOpenSettings={onOpenSettings}
+          onOpenHistory={onOpenHistory}
+        />
+      </div>
+    </Card>
   );
 }

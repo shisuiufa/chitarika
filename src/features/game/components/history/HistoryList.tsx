@@ -15,7 +15,7 @@ export default function HistoryList({
 }: GameHistoryListProps) {
   return (
     <div className={`${className}`}>
-      <div className="flex flex-col gap-4">
+      <div className="flex flex-col gap-vh-[35px]">
         {tasks.map((task, index) => (
           <HistoryItem
             key={task.id}

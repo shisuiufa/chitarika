@@ -28,12 +28,12 @@ export default function ResultMetricCard({
   return (
     <Card
       variant={variant}
-      innerClassName="p-4 flex items-center gap-4"
+      innerClassName="p-vh-[20px] flex items-center gap-vw-[20px]"
       className={className}
     >
       <div
         className={`
-          flex size-12 md:size-14 shrink-0 items-center justify-center rounded-full
+          flex size-vh-[60px] shrink-0 items-center justify-center rounded-full [&>svg]:size-vh-[35px]
           ${iconColorClasses[variant]}
         `}
       >
@@ -41,8 +41,8 @@ export default function ResultMetricCard({
       </div>
 
       <div className="min-w-0 text-left">
-        <h5 className="font-nunito-sans text-base font-bold">{label}</h5>
-        <p className="mt-2 font-comfortaa text-2xl lg:text-3xl font-extrabold text-dark-brown">
+        <h5 className="font-nunito-sans text-base font-bold leading-none">{label}</h5>
+        <p className="mt-vh-[15px] font-comfortaa text-vh-[30px] font-extrabold text-dark-brown leading-none">
           {value}
         </p>
       </div>

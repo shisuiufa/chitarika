@@ -24,19 +24,19 @@ export default function GameHistory({
 }: GameHistoryProps) {
   return (
     <Card
-      className="w-full h-full lg:w-[90%] xl:w-[70%] flex flex-col "
-      innerClassName="grow flex flex-col p-5 sm:p-6 lg:p-8"
+      className="w-full h-full flex flex-col "
+      innerClassName="grow flex flex-col p-vh-[40px]"
     >
-      <HistoryHeader className="mb-4" level={level} difficulty={difficulty} />
+      <HistoryHeader className="mb-vh-[35px]" level={level} difficulty={difficulty} />
 
-      <div className="grow overflow-y-auto border-y-2 border-dashed border-sand/70 px-2 py-5">
-        <HistorySummary className="mb-4" count={tasks.length} />
+      <div className="grow overflow-y-auto border-t-vh-[5px] border-b-vh-[5px] border-dashed border-sand/70 px-vw-[10px] py-vh-[35px]">
+        <HistorySummary className="mb-vh-[35px]" count={tasks.length} />
 
         <HistoryList tasks={tasks} level={level} />
       </div>
 
       <GameHistoryActions
-        className="mt-4"
+        className="mt-vh-[35px]"
         onBackToResult={onBackToResult}
         onRestart={onRestart}
       />

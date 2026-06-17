@@ -27,18 +27,18 @@ export default function LevelOption({
     <Button
       variant={variant}
       size="lg"
-      className="flex flex-col justify-between items-center font-bold normal-case"
+      className="flex flex-col justify-center items-center font-bold normal-case py-vh-[20px]"
       onClick={onClick}
     >
-      <div className="mb-1 sm:mb-3">
+      <div className="mb-vh-[10px]">
         {isTextIcon ? (
-          <span className="text-lg sm:text-3xl">{icon}</span>
+          <span className="text-vh-[50px]">{icon}</span>
         ) : (
-          <Icon size="w-4 h-4 sm:w-9 sm:h-9" />
+          <Icon size="size-vh-[50px]" />
         )}
       </div>
 
-      <h1 className="text-sm sm:text-base">{title}</h1>
+      <h1 className="text-vh-[20px]">{title}</h1>
     </Button>
   );
 }

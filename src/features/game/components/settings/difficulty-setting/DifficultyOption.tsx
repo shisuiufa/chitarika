@@ -20,7 +20,7 @@ export default function DifficultyOption({
   for (let i = 0; i < option.stars; i++) {
     listStars.push(
       <StarIcon
-        className={`${isSelected ? "text-brown" : "text-yellow"} size-3 sm:size-5`}
+        className={`${isSelected ? "text-brown" : "text-yellow"} size-vh-[20px]`}
         key={i}
       />,
     );
@@ -30,7 +30,7 @@ export default function DifficultyOption({
     <Button
       variant={variant}
       size="lg"
-      className={`normal-case! justify-between!`}
+      className={`normal-case justify-between`}
       onClick={() => onClick(option.id)}
     >
       {option.title}

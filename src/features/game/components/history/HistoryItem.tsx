@@ -27,14 +27,14 @@ export default function HistoryItem({
   level,
 }: GameHistoryItemProps) {
   return (
-    <Card innerClassName="px-5 py-3 md:px-7 md:py-4 bg-cream">
-      <span className="font-nunito-sans text-sm font-extrabold uppercase text-[#7B6C4E]">
+    <Card innerClassName="p-vh-[30px] bg-cream">
+      <span className="font-nunito-sans text-vh-[18px] font-extrabold text-brown">
         Задание {number}
       </span>
 
       <p
         className={`
-          wrap-break-word font-nunito-sans text-[#3B2A1A]
+          block font-nunito-sans text-vh-[20px]! font-extrabold text-dark-brown mt-vh-[8px] leading-none
           ${textClasses[level]}
         `}
       >

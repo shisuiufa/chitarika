@@ -1,4 +1,4 @@
-import type { ReactNode } from "react";
+import type {ReactNode} from "react";
 import Card from "@/shared/ui/Card";
 
 type ResultInfoCardProps = {
@@ -14,26 +14,27 @@ export default function ResultInfoCard({
   label,
   value,
 }: ResultInfoCardProps) {
+
   return (
     <Card
       size="lg"
       className={className}
-      innerClassName="flex items-center gap-3 bg-cream px-4 py-2 md:py-3"
+      innerClassName="flex items-center gap-vw-[20px] bg-cream px-vh-[30px] py-vh-[20px]"
     >
       <div
         className="
-          flex size-8 xl:size-11 shrink-0 items-center justify-center rounded-2xl
-          bg-yellow text-brown shadow-[0_3px_0_#FD9D1A]
+          flex size-vh-[60px] shrink-0 items-center justify-center rounded-full
+          bg-yellow text-brown [&>svg]:size-vh-[35px]
         "
       >
         {icon}
       </div>
 
       <div>
-        <p className="font-nunito-sans text-base xl:text-lg  text-brown">
+        <p className="font-nunito-sans text-base text-vh-[20px] font-bold text-brown">
           {label}
         </p>
-        <p className="font-comfortaa text-base xl:text-lg font-extrabold text-dark-brown">
+        <p className="font-comfortaa text-base text-vh-[18px] font-bold text-dark-brown">
           {value}
         </p>
       </div>

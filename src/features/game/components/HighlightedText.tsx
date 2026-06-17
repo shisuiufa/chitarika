@@ -10,7 +10,7 @@ export default function HighlightedText({ value }: { value: string }) {
       <mark
         key={index}
         className="
-          box-decoration-clone rounded-xl bg-yellow px-2 py-1
+          box-decoration-clone rounded-xl bg-yellow px-vh-[10px] py-vh-[5px]
           text-[#3B2A1A]
         "
       >

@@ -116,58 +116,66 @@ function App() {
   }
 
   return (
-    <div className="relative w-screen h-screen">
+    <div className="relative w-full h-dvh">
       <FlyingBackground />
 
-      <div className="relative z-10 w-full h-full scroll overflow-y-auto px-2 py-4 md:px-6 md:py-10 flex flex-col items-center">
-        {gameState.screen === SCREENS.Settings && (
-          <GameSettings
-            settings={gameState.settings}
-            onStart={handleStartGame}
-            onChangeSettings={handleChangeSettings}
-          />
-        )}
+      <div className="
+          relative z-10 w-full h-full scroll overflow-y-auto
+          py-vh-[40px]
+          px-vw-[40px]
+          flex items-center justify-center
+        "
+      >
+        <div className="w-full h-full lg:max-w-[75%]">
+          {gameState.screen === SCREENS.Settings && (
+            <GameSettings
+              settings={gameState.settings}
+              onStart={handleStartGame}
+              onChangeSettings={handleChangeSettings}
+            />
+          )}
 
-        {gameState.screen === SCREENS.Game && (
-          <GamePlay
-            settings={gameState.settings}
-            tasks={gameState.tasks}
-            currentTaskIndex={gameState.currentTaskIndex}
-            onNextTask={handleNextTask}
-            onComplete={handleGameComplete}
-          />
-        )}
+          {gameState.screen === SCREENS.Game && (
+            <GamePlay
+              settings={gameState.settings}
+              tasks={gameState.tasks}
+              currentTaskIndex={gameState.currentTaskIndex}
+              onNextTask={handleNextTask}
+              onComplete={handleGameComplete}
+            />
+          )}
 
-        {gameState.screen === SCREENS.Result && (
-          <GameResult
-            startedAt={gameState.startedAt ?? 0}
-            completedAt={gameState.completedAt ?? 0}
-            tasks={gameState.tasks}
-            level={gameState.settings.level}
-            difficulty={gameState.settings.difficulty}
-            onOpenSettings={handleOpenSettings}
-            onOpenHistory={handleOpenHistory}
-            onRestart={handleStartGame}
-          />
-        )}
+          {gameState.screen === SCREENS.Result && (
+            <GameResult
+              startedAt={gameState.startedAt ?? 0}
+              completedAt={gameState.completedAt ?? 0}
+              tasks={gameState.tasks}
+              level={gameState.settings.level}
+              difficulty={gameState.settings.difficulty}
+              onOpenSettings={handleOpenSettings}
+              onOpenHistory={handleOpenHistory}
+              onRestart={handleStartGame}
+            />
+          )}
 
-        {gameState.screen === SCREENS.History && (
-          <GameHistory
-            tasks={gameState.tasks}
-            level={gameState.settings.level}
-            difficulty={gameState.settings.difficulty}
-            onBackToResult={handleOpenResult}
-            onRestart={handleStartGame}
-          />
-        )}
+          {gameState.screen === SCREENS.History && (
+            <GameHistory
+              tasks={gameState.tasks}
+              level={gameState.settings.level}
+              difficulty={gameState.settings.difficulty}
+              onBackToResult={handleOpenResult}
+              onRestart={handleStartGame}
+            />
+          )}
 
-        {gameState.screen === SCREENS.Loading && (
-          <GameLoading
-            settings={gameState.settings}
-            onComplete={handleLoadingComplete}
-            onOpenSettings={handleOpenSettings}
-          />
-        )}
+          {gameState.screen === SCREENS.Loading && (
+            <GameLoading
+              settings={gameState.settings}
+              onComplete={handleLoadingComplete}
+              onOpenSettings={handleOpenSettings}
+            />
+          )}
+        </div>
       </div>
     </div>
   );

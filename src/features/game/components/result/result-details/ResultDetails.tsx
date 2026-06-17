@@ -31,17 +31,17 @@ export default function ResultDetails({
   className = "",
 }: ResultDetailsProps) {
   return (
-    <div className={`flex gap-3 ${className}`}>
+    <div className={`flex gap-vw-[25px] ${className}`}>
       <ResultInfoCard
         className="flex-1"
-        icon={<LevelIcon className="size-4 xl:size-7" />}
+        icon={<LevelIcon />}
         label={`Уровень`}
         value={LEVEL_LABEL[level]}
       />
 
       <ResultInfoCard
         className="flex-1"
-        icon={<StarIcon className="size-4 xl:size-7" />}
+        icon={<StarIcon />}
         label="Сложность"
         value={DIFFICULTY_LABEL[difficulty]}
       />

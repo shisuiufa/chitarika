@@ -31,7 +31,7 @@ export default function GamePlay({
   };
 
   return (
-    <div className="w-full lg:w-[90%] xl:w-[70%] flex h-full flex-col justify-center gap-5 md:gap-7">
+    <div className="w-full flex h-full flex-col justify-center gap-vh-[30px] ">
       <PlayHeader
         level={settings.level}
         current={currentTaskIndex + 1}

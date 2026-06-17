@@ -14,16 +14,16 @@ export default function HistoryHeader({
   difficulty,
 }: GameHistoryHeaderProps) {
   return (
-    <div className={`w-full flex flex-wrap justify-between gap-6 ${className}`}>
+    <div className={`w-full flex flex-wrap justify-between items-center gap-vw-[30px] ${className}`}>
       <div className="text-left">
-        <h1 className="mt-1 text-3xl xl:text-4xl font-extrabold text-brown">
+        <h1 className="text-vh-[40px] font-extrabold text-brown leading-none">
           История игры
         </h1>
-        <p className="mt-2 font-nunito-sans text-lg font-bold text-[#7B6C4E]">
+        <p className="mt-vh-[10px] text-vh-[20px] font-nunito-sans font-bold text-[#7B6C4E]">
           Все задания из этой попытки в порядке прохождения.
         </p>
       </div>
-      <ResultDetails className="flex-1" level={level} difficulty={difficulty} />
+      <ResultDetails  level={level} difficulty={difficulty} />
     </div>
   );
 }

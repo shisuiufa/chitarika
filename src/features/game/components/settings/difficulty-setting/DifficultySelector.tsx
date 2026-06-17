@@ -20,5 +20,5 @@ export default function DifficultySelector({
     />
   ));
 
-  return <div className="flex flex-col gap-4">{difficultiesList}</div>;
+  return <div className="flex flex-col gap-vh-[15px]">{difficultiesList}</div>;
 }

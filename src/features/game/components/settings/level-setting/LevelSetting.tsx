@@ -17,11 +17,12 @@ export default function LevelSetting({
   return (
     <Card
       className={`${className}`}
-      innerClassName="p-5 sm:p-6 bg-vanilla flex flex-col"
+      innerClassName="p-vh-[30px] bg-vanilla flex flex-col"
     >
-      <h1 className="flex items-center text-brown font-bold mb-4 md:mb-5 text-lg md:text-2xl gap-2">
-        <LevelIcon className="size-5 md:size-8" /> <span>Уровень</span>
+      <h1 className="flex items-center text-brown gap-vw-[10px] text-vh-[25px] mb-vh-[20px] leading-none">
+        <LevelIcon className="size-vh-[30px]" /> <span>Уровень</span>
       </h1>
+
       <LevelSelector
         selectedLevel={selectedLevel}
         onSelectLevel={onSelectLevel}

@@ -9,17 +9,17 @@ type CircleButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
 };
 
 const sizeClasses: Record<CircleButtonSize, string> = {
-  sm: "size-10",
-  md: "size-12",
-  lg: "size-8 md:size-12 lg:size-14",
-  xl: "size-12 sm:size-16",
+  sm: "size-vh-[40px]",
+  md: "size-vh-[48px]",
+  lg: "size-vh-[56px]",
+  xl: "size-vh-[64px]",
 };
 
 const contentSizeClasses: Record<CircleButtonSize, string> = {
-  sm: "p-2 text-lg",
-  md: "p-2.5 text-xl",
-  lg: "p-1 text-xl md:p-2 md:text-2xl lg:text-3xl",
-  xl: "p-2 text-xl md:p-4 md:text-3xl lg:text-4xl",
+  sm: "p-vh-[8px] text-vh-[18px]",
+  md: "p-vh-[10px] text-vh-[20px]",
+  lg: "p-vh-[12px] text-vh-[30px]",
+  xl: "p-vh-[16px] text-vh-[36px]",
 };
 
 const variantClasses: Record<
@@ -70,8 +70,13 @@ export default function CircleButton({
     <button
       type={type}
       className={`
-        group relative shrink-0 cursor-pointer rounded-full
-        transition focus:outline-none
+        group
+        relative
+        shrink-0
+        cursor-pointer
+        rounded-full
+        transition
+        focus:outline-none
         disabled:cursor-not-allowed
         ${sizeClasses[size]}
         ${className}
@@ -81,16 +86,27 @@ export default function CircleButton({
       <span
         aria-hidden="true"
         className={`
-          absolute inset-0 translate-y-1 rounded-full
+          absolute
+          inset-0
+          translate-y-vh-[4px]
+          rounded-full
           ${variantClass.bottom}
         `}
       />
 
       <span
         className={`
-          relative z-10 flex size-full items-center justify-center rounded-full
-          font-extrabold leading-none transition
-          group-active:translate-y-1
+          relative
+          z-10
+          flex
+          size-full
+          items-center
+          justify-center
+          rounded-full
+          font-extrabold
+          leading-none
+          transition
+          group-active:translate-y-vh-[4px]
           group-disabled:translate-y-0
           ${contentSizeClasses[size]}
           ${variantClass.content}

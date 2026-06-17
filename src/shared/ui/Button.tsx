@@ -1,6 +1,12 @@
 import type { ButtonHTMLAttributes, ReactNode } from "react";
 
-type ButtonVariant = "primary" | "secondary" | "accent" | "cream" | "none";
+type ButtonVariant =
+  | "primary"
+  | "secondary"
+  | "accent"
+  | "cream"
+  | "none";
+
 type ButtonSize = "sm" | "md" | "lg" | "xl";
 type IconPosition = "left" | "right";
 
@@ -15,54 +21,65 @@ const variantClasses: Record<ButtonVariant, string> = {
   primary: `
     bg-[#7EDC8B]
     text-[#245C32]
-    shadow-[0_4px_0_#58B96A]
-    sm:shadow-[0_6px_0_#58B96A]
-    active:shadow-[0_1px_0_#58B96A]
-    sm:active:shadow-[0_2px_0_#58B96A]
+    shadow-[0_clamp(3px,0.5556vh,6px)_0_#58B96A]
+    active:shadow-[0_clamp(1px,0.1852vh,2px)_0_#58B96A]
   `,
 
   secondary: `
-    bg-white
-    text-dark-brown
-    shadow-[0_4px_0_#DDD3C1,0_7px_12px_rgba(0,0,0,0.08)]
-    sm:shadow-[0_6px_0_#DDD3C1,0_10px_16px_rgba(0,0,0,0.1)]
-    active:shadow-[0_1px_0_#DDD3C1,0_3px_7px_rgba(0,0,0,0.06)]
-    sm:active:shadow-[0_2px_0_#DDD3C1,0_5px_10px_rgba(0,0,0,0.08)]
-  `,
+  bg-white
+  text-dark-brown
+  shadow-[0_0.5556vh_0_#DDD3C1,0_0.9259vh_1.4815vh_rgba(0,0,0,0.1)]
+  active:shadow-[0_0.1852vh_0_#DDD3C1,0_0.463vh_0.9259vh_rgba(0,0,0,0.08)]
+`,
 
   accent: `
     bg-yellow
     text-gold-brown
-    shadow-[0_4px_0_#FD9D1A]
-    sm:shadow-[0_6px_0_#FD9D1A]
-    active:shadow-[0_1px_0_#FD9D1A]
-    sm:active:shadow-[0_2px_0_#FD9D1A]
+    shadow-[0_clamp(3px,0.5556vh,6px)_0_#FD9D1A]
+    active:shadow-[0_clamp(1px,0.1852vh,2px)_0_#FD9D1A]
   `,
 
   cream: `
     bg-cream
     text-dark-brown
-    shadow-[0_4px_0_#E5D9BD]
-    sm:shadow-[0_6px_0_#E5D9BD]
-    active:shadow-[0_1px_0_#E5D9BD]
-    sm:active:shadow-[0_2px_0_#E5D9BD]
+    shadow-[0_clamp(3px,0.5556vh,6px)_0_#E5D9BD]
+    active:shadow-[0_clamp(1px,0.1852vh,2px)_0_#E5D9BD]
   `,
 
   none: "",
 };
 
 const sizeClasses: Record<ButtonSize, string> = {
-  sm: "px-4 py-2 text-sm",
-  md: "px-6 py-2.5 text-md sm:py-3 md:px-9 md:py-4 md:text-base",
-  lg: "px-6 py-3 text-base sm:py-4 md:px-12 md:py-5 md:text-lg",
-  xl: "px-15 py-6 text-2xl",
+  sm: `
+    px-vw-[16px]
+    py-vh-[8px]
+    text-vh-[14px]
+  `,
+
+  md: `
+    px-vw-[36px]
+    py-vh-[16px]
+    text-vh-[16px]
+  `,
+
+  lg: `
+    px-vw-[48px]
+    py-vh-[20px]
+    text-vh-[18px]
+  `,
+
+  xl: `
+    px-vw-[60px]
+    py-vh-[24px]
+    text-vh-[24px]
+  `,
 };
 
 const iconSizeClasses: Record<ButtonSize, string> = {
-  sm: "[&>svg]:size-4",
-  md: "[&>svg]:size-5",
-  lg: "[&>svg]:size-6",
-  xl: "[&>svg]:size-7",
+  sm: "[&>svg]:size-vh-[16px]",
+  md: "[&>svg]:size-vh-[20px]",
+  lg: "[&>svg]:size-vh-[24px]",
+  xl: "[&>svg]:size-vh-[28px]",
 };
 
 export default function Button({
@@ -79,15 +96,18 @@ export default function Button({
     <button
       type={type}
       className={`
-        flex items-center justify-center gap-2
-        rounded-xl sm:rounded-4xl
-        font-extrabold leading-none
+        flex
+        cursor-pointer
+        items-center
+        gap-vw-[8px]
+        rounded-vh-[32px]
+        font-extrabold
+        leading-none
         transition
-        active:translate-y-1
+        active:translate-y-[clamp(2px,0.3704vh,4px)]
         focus:outline-none
         disabled:pointer-events-none
         disabled:opacity-50
-        cursor-pointer
         ${variantClasses[variant]}
         ${sizeClasses[size]}
         ${iconSizeClasses[size]}
