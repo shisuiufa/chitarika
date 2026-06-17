@@ -19,6 +19,7 @@ type GameResultProps = {
   level: Level;
   difficulty: Difficulty;
   onOpenSettings: () => void;
+  onOpenHistory: () => void;
   onRestart: () => void;
 };
 
@@ -29,6 +30,7 @@ export default function GameResult({
   level,
   difficulty,
   onOpenSettings,
+  onOpenHistory,
   onRestart,
 }: GameResultProps) {
   const elapsedSeconds = getElapsedSeconds(startedAt, completedAt);
@@ -42,32 +44,33 @@ export default function GameResult({
   const readingUnitLabel = getReadingUnitLabel(readUnitCount, level);
 
   return (
-    <div className="flex w-full lg:w-[75%] flex-col text-center">
-      <Card innerClassName="relative overflow-hidden p-5 sm:p-6 lg:p-10">
-        <div className="relative z-10">
-          <ResultStars className="mb-12" />
+    <div className="flex grow w-full lg:w-[90%] xl:w-[70%] flex-col">
+      <Card
+        className="w-full h-full"
+        innerClassName="relative overflow-hidden p-5 sm:p-6 lg:p-10"
+      >
+        <div className="w-full h-full flex flex-col gap-3 md:gap-5 justify-between">
+          <ResultStars className="mb-4" />
 
-          <h1 className="mb-10 text-4xl font-extrabold text-brown sm:text-5xl">
+          <h1 className="text-2xl md:text-3xl lg:text-[4vh] font-extrabold text-brown text-center">
             Отличная работа!
           </h1>
 
-          <ResultDetails
-            className="mb-6"
-            level={level}
-            difficulty={difficulty}
-          />
+          <ResultDetails level={level} difficulty={difficulty} />
 
-          <Card innerClassName="bg-cream px-5 py-5">
-            <span className="font-nunito-sans text-lg font-extrabold text-[#7B6C4E]">
+          <Card
+            size="lg"
+            innerClassName="bg-cream px-2 py-3 md:px-4 md:py-4 text-center"
+          >
+            <span className="font-nunito-sans text-lg sm:text-xl lg:text-2xl font-extrabold text-[#7B6C4E]">
               Прочитано
             </span>
-            <strong className="mt-2 block font-comfortaa text-2xl font-extrabold leading-tight text-dark-brown sm:text-3xl lg:text-4xl">
+            <strong className="mt-2 block font-comfortaa text-2xl sm:text-3xl lg:text-5xl font-extrabold leading-tight text-dark-brown">
               {readUnitCount} {readingUnitLabel}
             </strong>
           </Card>
 
           <ResultMetrics
-            className="mt-6"
             formattedTime={formattedTime}
             readingSpeed={readingSpeed}
             level={level}
@@ -75,9 +78,9 @@ export default function GameResult({
           />
 
           <ResultActions
-            className="mt-6"
             onRestart={onRestart}
             onOpenSettings={onOpenSettings}
+            onOpenHistory={onOpenHistory}
           />
         </div>
       </Card>

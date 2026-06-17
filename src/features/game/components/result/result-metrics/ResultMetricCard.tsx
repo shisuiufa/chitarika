@@ -1,50 +1,40 @@
 import type { ReactNode } from "react";
+import Card from "@/shared/ui/Card";
 
-type ResultMetricCardColor = "yellow" | "orange" | "green";
+type ResultMetricCardColor = "yellow" | "orange" | "green" | "default";
 
 type ResultMetricCardProps = {
   icon?: ReactNode;
   label: string;
   value: ReactNode;
-  color?: ResultMetricCardColor;
+  variant?: ResultMetricCardColor;
   className?: string;
-};
-
-const colorClasses: Record<ResultMetricCardColor, string> = {
-  yellow:
-    "bg-[#FFF8DD] text-[#8A6800] border-[#F3D35C] shadow-[0_6px_0_#E6C554]",
-  orange:
-    "bg-[#FFF0DC] text-[#9A5700] border-[#F4B468] shadow-[0_6px_0_#EAA65A]",
-  green:
-    "bg-[#EAFBED] text-[#008A3D] border-[#7FDE98] shadow-[0_6px_0_#6ED489]",
 };
 
 const iconColorClasses: Record<ResultMetricCardColor, string> = {
   yellow: "bg-[#FFE08A]",
   orange: "bg-[#FFD0A0]",
   green: "bg-[#BDF4C8]",
+  default: "bg-sand",
 };
 
 export default function ResultMetricCard({
   icon,
   label,
   value,
-  color = "yellow",
+  variant = "default",
   className = "",
 }: ResultMetricCardProps) {
   return (
-    <div
-      className={`
-        flex min-w-0 items-center gap-4 rounded-4xl border-2 border-b-0 p-4
-        min-h-28
-        ${colorClasses[color]}
-        ${className}
-      `}
+    <Card
+      variant={variant}
+      innerClassName="p-4 flex items-center gap-4"
+      className={className}
     >
       <div
         className={`
-          flex size-14 shrink-0 items-center justify-center rounded-3xl
-          ${iconColorClasses[color]}
+          flex size-12 md:size-14 shrink-0 items-center justify-center rounded-full
+          ${iconColorClasses[variant]}
         `}
       >
         {icon}
@@ -56,6 +46,6 @@ export default function ResultMetricCard({
           {value}
         </p>
       </div>
-    </div>
+    </Card>
   );
 }

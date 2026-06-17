@@ -19,13 +19,6 @@ const LEVEL_LABEL: Record<Level, string> = {
   [LEVELS.Texts]: "Тексты",
 };
 
-const LEVEL_NUMBER: Record<Level, number> = {
-  [LEVELS.Syllables]: 1,
-  [LEVELS.Words]: 2,
-  [LEVELS.Sentences]: 3,
-  [LEVELS.Texts]: 4,
-};
-
 const DIFFICULTY_LABEL: Record<Difficulty, string> = {
   [DIFFICULTIES.Easy]: "Легко",
   [DIFFICULTIES.Medium]: "Средне",
@@ -38,15 +31,17 @@ export default function ResultDetails({
   className = "",
 }: ResultDetailsProps) {
   return (
-    <div className={`grid gap-5 sm:grid-cols-2 ${className}`}>
+    <div className={`flex gap-3 ${className}`}>
       <ResultInfoCard
-        icon={<LevelIcon />}
-        label={`Уровень ${LEVEL_NUMBER[level]}`}
+        className="flex-1"
+        icon={<LevelIcon className="size-4 xl:size-7" />}
+        label={`Уровень`}
         value={LEVEL_LABEL[level]}
       />
 
       <ResultInfoCard
-        icon={<StarIcon className="size-5" />}
+        className="flex-1"
+        icon={<StarIcon className="size-4 xl:size-7" />}
         label="Сложность"
         value={DIFFICULTY_LABEL[difficulty]}
       />

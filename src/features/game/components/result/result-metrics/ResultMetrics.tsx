@@ -25,24 +25,24 @@ export default function ResultMetrics({
   const speedLabel = isSyllables ? "Слогов в минуту" : "Слов в минуту";
 
   return (
-    <div className={`grid gap-4 md:grid-cols-3 ${className}`}>
+    <div className={`grid gap-6 md:grid-cols-3 ${className}`}>
       <ResultMetricCard
-        color="yellow"
-        icon={<TimeIcon className="size-8" />}
+        variant="yellow"
+        icon={<TimeIcon className="size-6 md:size-8" />}
         label="Время затрачено"
         value={formattedTime}
       />
 
       <ResultMetricCard
-        color="orange"
-        icon={<BookIcon className="size-8" />}
+        variant="orange"
+        icon={<BookIcon className="size-6 md:size-8" />}
         label={`${speedLabel}`}
         value={readingSpeed}
       />
 
       <ResultMetricCard
-        color="green"
-        icon={<ReadIcon className="size-8" />}
+        variant="green"
+        icon={<ReadIcon className="size-6 md:size-8" />}
         label="Заданий выполнено"
         value={completedTaskCount}
       />
