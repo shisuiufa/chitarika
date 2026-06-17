@@ -153,9 +153,7 @@ export default function ProgressBar({
       </Card>
 
       {showPercent && (
-        <div className={`text-center ${classes.percent}`}>
-          {percent} %
-        </div>
+        <div className={`text-center ${classes.percent}`}>{percent} %</div>
       )}
     </div>
   );

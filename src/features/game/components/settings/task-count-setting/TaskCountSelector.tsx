@@ -31,7 +31,10 @@ export default function TaskCountSelector({
   };
 
   return (
-    <Card className={`${className} pb-vh-[0px]`} innerClassName="border-none flex flex-col justify-center  bg-cream p-vh-[30px] shadow-[0_clamp(3px,0.5556vh,6px)_0_#E5D9BD]">
+    <Card
+      className={`${className} pb-vh-[0px]`}
+      innerClassName="border-none flex flex-col justify-center  bg-cream p-vh-[30px] shadow-[0_clamp(3px,0.5556vh,6px)_0_#E5D9BD]"
+    >
       <div className="grid grid-cols-[auto_1fr_auto] items-center gap-vw-[18px]">
         <CircleButton
           size="lg"

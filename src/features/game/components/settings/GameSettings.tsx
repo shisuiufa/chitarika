@@ -28,18 +28,11 @@ export default function GameSettings({
   };
 
   return (
-    <Card
-      className="w-full h-full"
-      innerClassName="p-vh-[40px] flex flex-col"
-    >
+    <Card className="w-full h-full" innerClassName="p-vh-[40px] flex flex-col">
       <div className="grow flex flex-col gap-vh-[30px] pb-vh-[35px]">
         <div className="text-center leading-none font-bold">
-          <h1 className="text-vh-[50px] mb-vh-[10px]">
-            Читарика
-          </h1>
-          <h2 className="text-vh-[25px]">
-            Настройки чтения
-          </h2>
+          <h1 className="text-vh-[50px] mb-vh-[10px]">Читарика</h1>
+          <h2 className="text-vh-[25px]">Настройки чтения</h2>
         </div>
 
         <LevelSetting
@@ -52,9 +45,7 @@ export default function GameSettings({
           <TaskCountSetting
             className="flex-1"
             selectedCount={settings.answers}
-            onSelectCountAnswers={(answer) =>
-              updateSettings("answers", answer)
-            }
+            onSelectCountAnswers={(answer) => updateSettings("answers", answer)}
           />
           <DifficultySetting
             className="flex-1"

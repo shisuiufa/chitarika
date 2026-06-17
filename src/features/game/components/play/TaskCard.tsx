@@ -16,14 +16,10 @@ type TaskCardProps = {
 };
 
 const textClasses: Record<Level, string> = {
-  [LEVELS.Syllables]:
-    "text-vh-[250px] font-bold tracking-wide",
-  [LEVELS.Words]:
-    "text-vh-[120px] font-semibold",
-  [LEVELS.Sentences]:
-    "text-vh-[45px] font-medium leading-relaxed",
-  [LEVELS.Texts]:
-    "text-vh-[45px] font-medium leading-relaxed",
+  [LEVELS.Syllables]: "text-vh-[250px] font-bold tracking-wide",
+  [LEVELS.Words]: "text-vh-[120px] font-semibold",
+  [LEVELS.Sentences]: "text-vh-[45px] font-medium leading-relaxed",
+  [LEVELS.Texts]: "text-vh-[45px] font-medium leading-relaxed",
 };
 
 const taskPatternStyle = {
@@ -59,9 +55,7 @@ export default function TaskCard({
         "
         />
 
-        <div
-          className={`relative z-100 p-vh-[30px] mx-auto`}
-        >
+        <div className={`relative z-100 p-vh-[30px] mx-auto`}>
           <p
             className={`
             wrap-break-word text-center font-nunito-sans text-[#3B2A1A]

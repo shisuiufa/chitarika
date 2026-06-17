@@ -32,7 +32,7 @@ export default function HistorySummary({
           bg-[#BDF4C8] text-[#008A3D]
         "
       >
-        <ReadIcon className="size-vh-[30px]"/>
+        <ReadIcon className="size-vh-[30px]" />
       </div>
     </Card>
   );

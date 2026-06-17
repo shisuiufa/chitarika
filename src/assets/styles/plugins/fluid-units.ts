@@ -13,10 +13,7 @@ function singleProperty(property: string, converter: Converter) {
   };
 }
 
-function multipleProperties(
-  properties: string[],
-  converter: Converter,
-) {
+function multipleProperties(properties: string[], converter: Converter) {
   return (value: string) => {
     const result = converter(value);
 
@@ -24,9 +21,7 @@ function multipleProperties(
       return {};
     }
 
-    return Object.fromEntries(
-      properties.map((property) => [property, result]),
-    );
+    return Object.fromEntries(properties.map((property) => [property, result]));
   };
 }
 

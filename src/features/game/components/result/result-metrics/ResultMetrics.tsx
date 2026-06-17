@@ -25,7 +25,9 @@ export default function ResultMetrics({
   const speedLabel = isSyllables ? "Слогов в минуту" : "Слов в минуту";
 
   return (
-    <div className={`grid gap-vw-[20px] md:gap-vh-[35px] md:grid-cols-3 ${className}`}>
+    <div
+      className={`grid gap-vw-[20px] md:gap-vh-[35px] md:grid-cols-3 ${className}`}
+    >
       <ResultMetricCard
         variant="yellow"
         icon={<TimeIcon />}

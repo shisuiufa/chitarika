@@ -1,7 +1,7 @@
 import DifficultySelector from "@/features/game/components/settings/difficulty-setting/DifficultySelector";
 import Card from "@/shared/ui/Card";
 import type { Difficulty } from "@/features/game/types/difficulty";
-import { ChartNoAxesColumnIncreasing  } from "lucide-react";
+import { ChartNoAxesColumnIncreasing } from "lucide-react";
 
 type DifficultySettingProps = {
   className?: string;
@@ -23,9 +23,7 @@ export default function DifficultySetting({
           aria-hidden="true"
         />
 
-        <h2 className="text-vh-[25px] leading-none">
-          Сложность
-        </h2>
+        <h2 className="text-vh-[25px] leading-none">Сложность</h2>
       </div>
       <DifficultySelector
         selectedDifficulty={selectedDifficulty}

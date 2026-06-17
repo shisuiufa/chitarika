@@ -41,7 +41,9 @@ export default function ResultMetricCard({
       </div>
 
       <div className="min-w-0 text-left">
-        <h5 className="font-nunito-sans text-base font-bold leading-none">{label}</h5>
+        <h5 className="font-nunito-sans text-base font-bold leading-none">
+          {label}
+        </h5>
         <p className="mt-vh-[15px] font-comfortaa text-vh-[30px] font-extrabold text-dark-brown leading-none">
           {value}
         </p>

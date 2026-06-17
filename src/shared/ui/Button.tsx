@@ -1,11 +1,6 @@
 import type { ButtonHTMLAttributes, ReactNode } from "react";
 
-type ButtonVariant =
-  | "primary"
-  | "secondary"
-  | "accent"
-  | "cream"
-  | "none";
+type ButtonVariant = "primary" | "secondary" | "accent" | "cream" | "none";
 
 type ButtonSize = "sm" | "md" | "lg" | "xl";
 type IconPosition = "left" | "right";

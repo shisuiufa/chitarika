@@ -14,7 +14,9 @@ export default function HistoryHeader({
   difficulty,
 }: GameHistoryHeaderProps) {
   return (
-    <div className={`w-full flex flex-wrap justify-between items-center gap-vw-[30px] ${className}`}>
+    <div
+      className={`w-full flex flex-wrap justify-between items-center gap-vw-[30px] ${className}`}
+    >
       <div className="text-left">
         <h1 className="text-vh-[40px] font-extrabold text-brown leading-none">
           История игры
@@ -23,7 +25,7 @@ export default function HistoryHeader({
           Все задания из этой попытки в порядке прохождения.
         </p>
       </div>
-      <ResultDetails  level={level} difficulty={difficulty} />
+      <ResultDetails level={level} difficulty={difficulty} />
     </div>
   );
 }

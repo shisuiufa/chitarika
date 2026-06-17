@@ -6,9 +6,7 @@ export default function ResultStars({
   className?: string;
 }) {
   return (
-    <div
-      className={`flex items-end justify-center gap-vw-[20px] ${className}`}
-    >
+    <div className={`flex items-end justify-center gap-vw-[20px] ${className}`}>
       {Array.from({ length: 5 }).map((_, index) => (
         <div
           key={index}

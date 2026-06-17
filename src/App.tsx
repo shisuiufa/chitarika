@@ -119,7 +119,8 @@ function App() {
     <div className="relative w-full h-dvh">
       <FlyingBackground />
 
-      <div className="
+      <div
+        className="
           relative z-10 w-full h-full scroll overflow-y-auto
           py-vh-[40px]
           px-vw-[40px]

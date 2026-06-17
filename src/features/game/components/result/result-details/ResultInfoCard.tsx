@@ -1,4 +1,4 @@
-import type {ReactNode} from "react";
+import type { ReactNode } from "react";
 import Card from "@/shared/ui/Card";
 
 type ResultInfoCardProps = {
@@ -14,7 +14,6 @@ export default function ResultInfoCard({
   label,
   value,
 }: ResultInfoCardProps) {
-
   return (
     <Card
       size="lg"

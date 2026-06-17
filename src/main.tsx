@@ -35,7 +35,6 @@ images.forEach((src) => {
   });
 });
 
-
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <App />

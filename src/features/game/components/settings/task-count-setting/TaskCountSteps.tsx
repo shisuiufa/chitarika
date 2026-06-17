@@ -28,11 +28,7 @@ export default function TaskCountSteps({
               h-vh-[10px]
               rounded-full
               transition
-              ${
-              isActive
-                ? "bg-yellow shadow-[0_2px_0_#FD9D1A]"
-                : "bg-sand/55"
-            }
+              ${isActive ? "bg-yellow shadow-[0_2px_0_#FD9D1A]" : "bg-sand/55"}
             `}
           />
         );
