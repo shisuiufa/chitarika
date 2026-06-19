@@ -30,7 +30,7 @@ export default function DifficultyOption({
     <Button
       variant={variant}
       size="lg"
-      className={`normal-case justify-between`}
+      className="normal-case justify-between"
       onClick={() => onClick(option.id)}
     >
       {option.title}
