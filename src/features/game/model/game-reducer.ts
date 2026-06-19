@@ -60,6 +60,17 @@ export function gameReducer(state: GameState, action: GameAction): GameState {
       };
     }
 
+    case GAME_ACTIONS.PreviousTask: {
+      if (state.tasks.length === 0) {
+        return state;
+      }
+
+      return {
+        ...state,
+        currentTaskIndex: Math.max(state.currentTaskIndex - 1, 0),
+      };
+    }
+
     case GAME_ACTIONS.GameCompleted: {
       return {
         ...state,

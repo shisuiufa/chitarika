@@ -31,6 +31,9 @@ export type GameAction =
       type: typeof GAME_ACTIONS.NextTask;
     }
   | {
+      type: typeof GAME_ACTIONS.PreviousTask;
+    }
+  | {
       type: typeof GAME_ACTIONS.GameCompleted;
       payload: {
         completedAt: number;

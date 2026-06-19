@@ -84,6 +84,12 @@ function App() {
     });
   };
 
+  const handlePreviousTask = () => {
+    dispatch({
+      type: GAME_ACTIONS.PreviousTask,
+    });
+  };
+
   const handleGameComplete = () => {
     dispatch({
       type: GAME_ACTIONS.GameCompleted,
@@ -141,6 +147,7 @@ function App() {
               settings={gameState.settings}
               tasks={gameState.tasks}
               currentTaskIndex={gameState.currentTaskIndex}
+              onPreviousTask={handlePreviousTask}
               onNextTask={handleNextTask}
               onComplete={handleGameComplete}
             />
