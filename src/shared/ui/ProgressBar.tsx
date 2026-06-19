@@ -32,13 +32,13 @@ const getProgressColor = (percent: number) => {
 const sizeClasses: Record<ProgressBarSize, ProgressBarSizeClasses> = {
   sm: {
     wrapper: `
-      px-vw-[12px]
-      py-vh-[8px]
+      px-vw-[10px]
+      py-vh-[7px]
       rounded-full
     `,
-    bar: "h-vh-[20px]",
-    marker: "size-vh-[28px]",
-    star: "size-vh-[28px]",
+    bar: "h-vh-[13px]",
+    marker: "size-vh-[23px]",
+    star: "size-vh-[23px]",
     percent: "mt-vh-[4px] text-vh-[12px]",
   },
 
