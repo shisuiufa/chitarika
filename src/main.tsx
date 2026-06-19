@@ -13,6 +13,8 @@ import bg2 from "@/assets/images/bgs/2.png";
 import bg3 from "@/assets/images/bgs/3.png";
 import bg4 from "@/assets/images/bgs/4.png";
 import bg5 from "@/assets/images/bgs/5.png";
+import { ModalRoot, ModalsProvider } from "@/app/providers/modals-provider";
+import ExitGameHotkey from "@/features/app-exit/components/ExitGameHotkey";
 
 preload(comfortaaFont, {
   as: "font",
@@ -37,6 +39,10 @@ images.forEach((src) => {
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <App />
+    <ModalsProvider>
+      <App />
+      <ModalRoot />
+      <ExitGameHotkey />
+    </ModalsProvider>
   </StrictMode>,
 );
