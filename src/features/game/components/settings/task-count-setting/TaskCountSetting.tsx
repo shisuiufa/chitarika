@@ -15,7 +15,7 @@ export default function TaskCountSetting({
 }: AnswerCountSettingProps) {
   return (
     <Card
-      className={`${className}`}
+      className={className}
       innerClassName="p-vh-[35px] bg-vanilla flex flex-col"
     >
       <div className="mb-vh-[20px] flex items-center gap-vw-[10px]">

@@ -9,7 +9,7 @@ type ResultInfoCardProps = {
 };
 
 export default function ResultInfoCard({
-  className = "",
+  className,
   icon,
   label,
   value,

@@ -18,7 +18,7 @@ export default function ResultMetrics({
   formattedTime,
   readingSpeed,
   completedTaskCount,
-  className,
+  className = "",
 }: ResultMetricsProps) {
   const isSyllables = level === LEVELS.Syllables;
 

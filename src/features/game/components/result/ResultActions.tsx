@@ -9,13 +9,13 @@ type ResultActionsProps = {
 };
 
 export default function ResultActions({
-  className = "",
+  className,
   onRestart,
   onOpenSettings,
   onOpenHistory,
 }: ResultActionsProps) {
   return (
-    <div className={`${className}`}>
+    <div className={className}>
       <div className="mx-auto flex flex-col gap-vh-[35px] w-full lg:w-[50%]">
         <Button
           size="lg"

@@ -23,7 +23,7 @@ export default function ResultMetricCard({
   label,
   value,
   variant = "default",
-  className = "",
+  className,
 }: ResultMetricCardProps) {
   return (
     <Card

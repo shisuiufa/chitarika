@@ -9,12 +9,12 @@ type GameHistoryListProps = {
 };
 
 export default function HistoryList({
-  className = "",
+  className,
   tasks,
   level,
 }: GameHistoryListProps) {
   return (
-    <div className={`${className}`}>
+    <div className={className}>
       <div className="flex flex-col gap-vh-[35px]">
         {tasks.map((task, index) => (
           <HistoryItem

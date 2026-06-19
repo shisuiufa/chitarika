@@ -8,7 +8,7 @@ type GameHistorySummaryProps = {
 };
 
 export default function HistorySummary({
-  className = "",
+  className,
   count,
 }: GameHistorySummaryProps) {
   return (

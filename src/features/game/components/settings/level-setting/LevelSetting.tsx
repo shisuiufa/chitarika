@@ -11,12 +11,12 @@ type LevelSettingProps = {
 
 export default function LevelSetting({
   selectedLevel,
-  className = "",
+  className,
   onSelectLevel,
 }: LevelSettingProps) {
   return (
     <Card
-      className={`${className}`}
+      className={className}
       innerClassName="p-vh-[30px] bg-vanilla flex flex-col"
     >
       <h1 className="flex items-center text-brown gap-vw-[10px] text-vh-[25px] mb-vh-[20px] leading-none">
