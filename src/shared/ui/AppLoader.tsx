@@ -4,7 +4,7 @@ export default function AppLoader() {
       <img
         src="./logo.png"
         alt="Читарика"
-        className="size-80 animate-logo-pulse"
+        className="size-60 object-contain animate-logo-pulse"
       />
     </div>
   );
