@@ -17,7 +17,7 @@ export default function GameHistoryActions({
       <Button
         size="lg"
         variant="secondary"
-        className="flex-1 uppercase justify-center"
+        className="flex-1 uppercase"
         onClick={onBackToResult}
         icon={<ArrowLeft aria-hidden="true" />}
         iconPosition="left"
@@ -27,7 +27,7 @@ export default function GameHistoryActions({
 
       <Button
         size="lg"
-        className="flex-1 uppercase justify-center"
+        className="flex-1 uppercase"
         onClick={onRestart}
         icon={<RotateCcw aria-hidden="true" />}
         iconPosition="left"

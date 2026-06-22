@@ -98,7 +98,7 @@ export default function TaskCard({
         <Button
           size="lg"
           variant="cream"
-          className="uppercase flex-1 justify-center"
+          className="uppercase flex-1"
           onClick={onBack}
           disabled={isFirstTask}
           icon={<ArrowLeft aria-hidden="true" />}
@@ -109,7 +109,7 @@ export default function TaskCard({
 
         <Button
           size="lg"
-          className="uppercase flex-1 justify-center"
+          className="uppercase flex-1"
           onClick={handleClick}
           icon={<ButtonIcon aria-hidden="true" />}
         >

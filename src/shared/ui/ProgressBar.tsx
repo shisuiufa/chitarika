@@ -1,5 +1,6 @@
 import Card from "@/shared/ui/Card";
 import StarFilled from "@/assets/images/stars/star-filled.png";
+import { cn } from "@/shared/lib/cn";
 
 type ProgressBarSize = "sm" | "md" | "lg";
 
@@ -21,45 +22,30 @@ type ProgressBarSizeClasses = {
   percent: string;
 };
 
-const getProgressColor = (percent: number) => {
+const getProgressColor = (percent: number): string => {
   if (percent >= 100) return "#5FEB78";
   if (percent >= 75) return "#A8F044";
   if (percent >= 50) return "#FFD43B";
-
   return "#FD9D1A";
 };
 
 const sizeClasses: Record<ProgressBarSize, ProgressBarSizeClasses> = {
   sm: {
-    wrapper: `
-      px-vw-[10px]
-      py-vh-[7px]
-      rounded-full
-    `,
+    wrapper: "px-vw-[10px] py-vh-[7px] rounded-full",
     bar: "h-vh-[13px]",
     marker: "size-vh-[23px]",
     star: "size-vh-[23px]",
     percent: "mt-vh-[4px] text-vh-[12px]",
   },
-
   md: {
-    wrapper: `
-      px-vw-[12px]
-      py-vh-[8px]
-      rounded-full
-    `,
+    wrapper: "px-vw-[12px] py-vh-[8px] rounded-full",
     bar: "h-vh-[24px]",
     marker: "size-vh-[32px]",
     star: "size-vh-[32px]",
     percent: "mt-vh-[8px] text-vh-[16px]",
   },
-
   lg: {
-    wrapper: `
-      px-vw-[16px]
-      py-vh-[12px]
-      rounded-full
-    `,
+    wrapper: "px-vw-[16px] py-vh-[12px] rounded-full",
     bar: "h-vh-[28px]",
     marker: "size-vh-[36px]",
     star: "size-vh-[36px]",
@@ -84,16 +70,13 @@ export default function ProgressBar({
   const classes = sizeClasses[size];
 
   return (
-    <div className={className}>
-      <Card innerClassName={classes.wrapper} size={size}>
+    <div className={cn("w-full", className)}>
+      <Card
+        innerClassName={cn("flex items-center", classes.wrapper)}
+        size={size}
+      >
         <div
-          className={`
-            relative
-            w-full
-            rounded-full
-            bg-vanilla
-            ${classes.bar}
-          `}
+          className={cn("relative w-full rounded-full bg-vanilla", classes.bar)}
         >
           <div
             className="
@@ -130,23 +113,12 @@ export default function ProgressBar({
 
             {showStarMarker && percent > 0 && (
               <div
-                className={`
-                  absolute
-                  right-0
-                  top-1/2
-                  z-10
-                  flex
-                  -translate-y-1/2
-                  translate-x-1/2
-                  items-center
-                  justify-center
-                  rounded-full
-                  bg-white
-                  transition-[color]
-                  duration-300
-                  ease-out
-                  ${classes.marker}
-                `}
+                className={cn(
+                  "absolute right-0 top-1/2 z-10 flex -translate-y-1/2 translate-x-1/2",
+                  "items-center justify-center rounded-full bg-white transition-[color]",
+                  "duration-300 ease-out",
+                  classes.marker,
+                )}
                 style={{
                   color: fillColor,
                 }}
@@ -164,7 +136,9 @@ export default function ProgressBar({
       </Card>
 
       {showPercent && (
-        <div className={`text-center ${classes.percent}`}>{percent} %</div>
+        <div className={cn("text-center font-extrabold", classes.percent)}>
+          {percent} %
+        </div>
       )}
     </div>
   );

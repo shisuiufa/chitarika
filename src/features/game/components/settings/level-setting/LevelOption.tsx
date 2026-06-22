@@ -27,7 +27,7 @@ export default function LevelOption({
     <Button
       variant={variant}
       size="lg"
-      className="flex flex-col justify-center items-center font-bold normal-case py-vh-[20px]"
+      className="flex-col font-bold normal-case py-vh-[20px]"
       onClick={onClick}
     >
       <div className="mb-vh-[10px]">

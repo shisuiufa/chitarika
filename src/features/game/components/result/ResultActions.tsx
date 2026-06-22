@@ -19,7 +19,7 @@ export default function ResultActions({
       <div className="mx-auto flex flex-col gap-vh-[35px] w-full lg:w-[50%]">
         <Button
           size="lg"
-          className="relative z-100 w-full uppercase flex items-center justify-center"
+          className="relative z-100 w-full uppercase"
           onClick={onRestart}
           icon={<RotateCcw aria-hidden="true" />}
           iconPosition="left"
@@ -32,7 +32,7 @@ export default function ResultActions({
             onClick={onOpenSettings}
             size="lg"
             variant="secondary"
-            className="uppercase flex-1 flex items-center justify-center"
+            className="uppercase flex-1"
             icon={<Settings aria-hidden="true" />}
             iconPosition="left"
           >
@@ -42,7 +42,7 @@ export default function ResultActions({
           <Button
             size="lg"
             variant="secondary"
-            className="uppercase flex-1 flex items-center justify-center"
+            className="uppercase flex-1"
             onClick={onOpenHistory}
             icon={<History aria-hidden="true" />}
             iconPosition="left"

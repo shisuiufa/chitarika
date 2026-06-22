@@ -24,17 +24,13 @@ export default function ExitGameModal({ onClose, ...props }: BaseModalProps) {
           <Button
             size="xl"
             variant="secondary"
-            className="w-full justify-center"
+            className="w-full"
             onClick={onClose}
           >
             Нет
           </Button>
 
-          <Button
-            size="xl"
-            className="w-full justify-center"
-            onClick={handleExit}
-          >
+          <Button size="xl" className="w-full" onClick={handleExit}>
             Да
           </Button>
         </div>
