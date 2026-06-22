@@ -1,4 +1,4 @@
-import { app, BrowserWindow, ipcMain, Menu  } from "electron";
+import { app, BrowserWindow, ipcMain, Menu } from "electron";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
