@@ -19,7 +19,7 @@ export default function TaskCountSetting({
       innerClassName="p-vh-[35px] bg-vanilla flex flex-col"
     >
       <div className="mb-vh-[20px] flex items-center gap-vw-[10px]">
-        <Blocks className="size-vh-[30px] text-gold-brown" strokeWidth={2.5} />
+        <Blocks className="size-vh-[25px] text-gold-brown" strokeWidth={2.5} />
 
         <h1 className="text-vh-[25px] leading-none">Количество заданий</h1>
       </div>

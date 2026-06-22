@@ -20,7 +20,7 @@ export default function LevelSetting({
       innerClassName="p-vh-[30px] bg-vanilla flex flex-col"
     >
       <h1 className="flex items-center text-brown gap-vw-[10px] text-vh-[25px] mb-vh-[20px] leading-none">
-        <LevelIcon className="size-vh-[30px]" /> <span>Уровень</span>
+        <LevelIcon className="size-vh-[25px]" /> <span>Уровень</span>
       </h1>
 
       <LevelSelector

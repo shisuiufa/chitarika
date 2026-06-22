@@ -83,11 +83,6 @@ export default function ProgressBar({
   const fillColor = getProgressColor(percent);
   const classes = sizeClasses[size];
 
-  const markerTranslate =
-    percent <= 0
-      ? "translate-x-0 -translate-y-1/2"
-      : "-translate-x-full -translate-y-1/2";
-
   return (
     <div className={className}>
       <Card innerClassName={classes.wrapper} size={size}>
@@ -102,53 +97,69 @@ export default function ProgressBar({
         >
           <div
             className="
-              relative
+              absolute
+              left-0
+              top-0
               h-full
-              overflow-hidden
-              rounded-full
-              transition-all
+              transition-[width]
               duration-300
               ease-out
             "
             style={{
               width: `${percent}%`,
-              backgroundColor: fillColor,
             }}
           >
-            {needProgressAnimated && (
-              <div className="progress-shine absolute top-0 h-full w-1/2" />
-            )}
-          </div>
-
-          {showStarMarker && (
             <div
-              className={`
-                absolute
-                top-1/2
-                z-10
-                flex
-                items-center
-                justify-center
+              className="
+                relative
+                h-full
+                overflow-hidden
                 rounded-full
-                bg-white
-                transition-all
-                duration-150
-                ${markerTranslate}
-                ${classes.marker}
-              `}
+                transition-[background-color]
+                duration-300
+                ease-out
+              "
               style={{
-                left: `${percent}%`,
-                color: fillColor,
+                backgroundColor: fillColor,
               }}
             >
-              <img
-                className={classes.star}
-                src={StarFilled}
-                alt=""
-                aria-hidden="true"
-              />
+              {needProgressAnimated && (
+                <div className="progress-shine absolute top-0 h-full w-1/2" />
+              )}
             </div>
-          )}
+
+            {showStarMarker && percent > 0 && (
+              <div
+                className={`
+                  absolute
+                  right-0
+                  top-1/2
+                  z-10
+                  flex
+                  -translate-y-1/2
+                  translate-x-1/2
+                  items-center
+                  justify-center
+                  rounded-full
+                  bg-white
+                  transition-[color]
+                  duration-300
+                  ease-out
+                  ${classes.marker}
+                `}
+                style={{
+                  color: fillColor,
+                }}
+              >
+                <img
+                  className={classes.star}
+                  src={StarFilled}
+                  alt=""
+                  aria-hidden="true"
+                />
+              </div>
+            )}
+          </div>
         </div>
       </Card>
 

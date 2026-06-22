@@ -18,7 +18,7 @@ export default function DifficultySetting({
     <Card innerClassName="p-vh-[35px] bg-vanilla" className={className}>
       <div className="mb-vh-[20px] flex items-center gap-vw-[10px]">
         <ChartNoAxesColumnIncreasing
-          className="size-vh-[30px] text-gold-brown"
+          className="size-vh-[25px] text-gold-brown"
           strokeWidth={2.5}
           aria-hidden="true"
         />
