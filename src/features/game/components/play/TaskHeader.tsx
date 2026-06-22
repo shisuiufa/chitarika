@@ -4,6 +4,7 @@ import type { Difficulty } from "@/features/game/types/difficulty";
 import { DIFFICULTIES } from "@/features/game/constants/difficulties";
 import Card from "@/shared/ui/Card";
 import ProgressBar from "@/shared/ui/ProgressBar";
+import TaskHeaderItem from "@/features/game/components/play/TaskHeaderItem";
 
 type GameHeaderProps = {
   level: Level;
@@ -25,30 +26,6 @@ const DIFFICULTY_LABEL: Record<Difficulty, string> = {
   [DIFFICULTIES.Hard]: "Сложно",
 };
 
-type HeaderItemProps = {
-  markerClassName: string;
-  label: string;
-  value: string;
-};
-
-function HeaderItem({ markerClassName, label, value }: HeaderItemProps) {
-  return (
-    <div className="shrink-0">
-      <div className="mb-vh-[7px] flex items-center gap-vw-[8px]">
-        <span
-          className={`size-vh-[8px] shrink-0 rounded-full ${markerClassName}`}
-        />
-        <p className="whitespace-nowrap font-nunito-sans text-vh-[14px] font-extrabold leading-none text-[#8A6A12]">
-          {label}
-        </p>
-      </div>
-      <p className="whitespace-nowrap font-comfortaa text-vh-[27px] font-bold leading-none text-brown">
-        {value}
-      </p>
-    </div>
-  );
-}
-
 export default function TaskHeader({
   level,
   difficulty,
@@ -61,8 +38,8 @@ export default function TaskHeader({
       className="w-full"
       innerClassName="bg-[#FFF8DD] px-vw-[22px] py-vh-[14px]"
     >
-      <div className="flex items-center gap-vw-[24px]">
-        <HeaderItem
+      <div className="flex items-center gap-vw-[24px] h-full">
+        <TaskHeaderItem
           markerClassName="bg-yellow"
           label="Сейчас читаем"
           value={LEVEL_LABEL[level]}
@@ -70,7 +47,7 @@ export default function TaskHeader({
 
         <div className="h-vh-[42px] w-vh-[1px] shrink-0 bg-[#E4CB8A]" />
 
-        <HeaderItem
+        <TaskHeaderItem
           markerClassName="bg-orange"
           label="Сложность"
           value={DIFFICULTY_LABEL[difficulty]}
