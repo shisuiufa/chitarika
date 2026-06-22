@@ -1,5 +1,3 @@
-console.log("preload loaded");
-
 const { contextBridge, ipcRenderer } = require("electron");
 
 const electronApp = {

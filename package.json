@@ -1,9 +1,21 @@
 {
   "name": "chitarika",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
-  "main": "electron/main.ts",
+  "main": "electron/main.js",
+  "build": {
+    "appId": "com.chitarika.app",
+    "productName": "Читарика",
+    "files": [
+      "dist/**/*",
+      "electron/**/*"
+    ],
+    "win": {
+      "icon": "public/logo.ico",
+      "target": "NSIS"
+    }
+  },
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
@@ -13,7 +25,9 @@
     "test": "vitest",
     "typecheck": "tsc -b --noEmit",
     "format": "prettier --write .",
-    "electron": "electron ."
+    "electron": "electron .",
+    "build:electron": "tsc -p tsconfig.electron.json",
+    "dist": "npm run build && electron-builder"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.3.0",
@@ -31,6 +45,7 @@
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^6.0.1",
     "electron": "^42.4.1",
+    "electron-builder": "^26.15.3",
     "eslint": "^10.5.0",
     "eslint-plugin-react-hooks": "^7.1.1",
     "eslint-plugin-react-refresh": "^0.5.3",

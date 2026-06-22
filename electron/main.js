@@ -1,4 +1,4 @@
-import { app, BrowserWindow, ipcMain } from "electron";
+import { app, BrowserWindow, ipcMain, Menu  } from "electron";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -15,8 +15,14 @@ const createWindow = () => {
     },
   });
 
+  win.webContents.on("before-input-event", (event, input) => {
+    if (input.key === "F11") {
+      event.preventDefault();
+    }
+  });
+
   if (app.isPackaged) {
-    void win.loadFile(path.join(process.cwd(), "dist/index.html"));
+    void win.loadFile(path.join(__dirname, "../dist/index.html"));
   } else {
     void win.loadURL("http://localhost:5173");
     win.webContents.openDevTools();
@@ -25,9 +31,10 @@ const createWindow = () => {
 
 app.whenReady().then(() => {
   ipcMain.handle("app:quit", () => {
-    console.log("app:quit received");
     app.quit();
   });
+
+  Menu.setApplicationMenu(null);
 
   createWindow();
 
