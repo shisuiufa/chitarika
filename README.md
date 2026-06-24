@@ -1,73 +1,148 @@
-# React + TypeScript + Vite
+# Читарика
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Образовательное приложение для тренировки чтения на русском языке. Подходит для детей и начинающих читателей: от отдельных слогов до коротких текстов.
 
-Currently, two official plugins are available:
+Доступно как веб-приложение (Vite) и как десктопное приложение (Electron, полноэкранный режим).
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Возможности
 
-## React Compiler
+- **4 уровня чтения:** слоги, слова, предложения, тексты
+- **3 уровня сложности:** легко, средне, сложно
+- **Настройка количества заданий** в одной сессии
+- **Подсветка слогов/слов** в заданиях — `[выделенный]` фрагмент показывается жёлтым
+- **Экран результатов:** время, скорость чтения, количество прочитанных единиц
+- **История заданий** после прохождения
+- **Адаптивная вёрстка** под полноэкранный режим (1920×1080)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Стек
 
-## Expanding the ESLint configuration
+- React 19 + TypeScript
+- Vite 8
+- Tailwind CSS 4
+- Electron + electron-builder
+- Vitest
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Требования
 
-```js
-export default defineConfig([
-  globalIgnores(["dist"]),
-  {
-    files: ["**/*.{ts,tsx}"],
-    extends: [
-      // Other configs...
+- Node.js 20+
+- npm
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## Установка
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ["./tsconfig.node.json", "./tsconfig.app.json"],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-]);
+```bash
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Разработка
 
-```js
-// eslint.config.js
-import reactX from "eslint-plugin-react-x";
-import reactDom from "eslint-plugin-react-dom";
+### Веб-версия
 
-export default defineConfig([
-  globalIgnores(["dist"]),
-  {
-    files: ["**/*.{ts,tsx}"],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs["recommended-typescript"],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ["./tsconfig.node.json", "./tsconfig.app.json"],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-]);
+```bash
+npm run dev
 ```
+
+Приложение откроется на `http://localhost:5173`.
+
+### Electron (dev)
+
+В одном терминале:
+
+```bash
+npm run dev
+```
+
+В другом:
+
+```bash
+npm run electron
+```
+
+## Сборка
+
+### Веб
+
+```bash
+npm run build
+npm run preview
+```
+
+### Десктоп (Windows)
+
+```bash
+npm run dist
+```
+
+Собранный установщик появится в папке `dist/` (NSIS, Windows).
+
+## Скрипты
+
+| Команда             | Описание                        |
+| ------------------- | ------------------------------- |
+| `npm run dev`       | Dev-сервер Vite                 |
+| `npm run build`     | Production-сборка               |
+| `npm run preview`   | Просмотр production-сборки      |
+| `npm run electron`  | Запуск Electron (нужен `dev`)   |
+| `npm run dist`      | Сборка десктопного приложения   |
+| `npm run test`      | Запуск тестов (Vitest)          |
+| `npm run typecheck` | Проверка типов TypeScript       |
+| `npm run lint`      | ESLint                          |
+| `npm run format`    | Prettier                        |
+
+## Структура проекта
+
+```
+src/
+├── app/                    # Провайдеры приложения (модалки)
+├── features/
+│   ├── game/               # Игра: UI, логика, контент
+│   │   ├── components/     # Экраны и компоненты
+│   │   ├── data/           # Задания (слоги, слова, предложения, тексты)
+│   │   ├── model/          # Reducer, утилиты чтения
+│   │   └── constants/      # Уровни, сложность, экраны
+│   └── app-exit/           # Выход из Electron-приложения
+├── shared/                 # UI-компоненты, иконки, утилиты
+└── assets/                 # Шрифты, стили, изображения
+
+electron/
+├── main.js                 # Главный процесс Electron
+└── preload.js              # IPC-мост для выхода из приложения
+```
+
+## Добавление контента
+
+Задания лежат в `src/features/game/data/`:
+
+```
+data/
+├── syllables/   # easy.ts, medium.ts, hard.ts
+├── words/
+├── sentences/
+└── texts/
+```
+
+Каждый файл экспортирует группу заданий:
+
+```ts
+export const syllableEasyGroup = {
+  id: "syllables-easy",
+  level: LEVELS.Syllables,
+  difficulty: DIFFICULTIES.Easy,
+  tasks: [
+    { id: "syllable-easy-1", value: "ма" },
+    { id: "syllable-easy-2", value: "мо" },
+    // ...
+  ],
+};
+```
+
+Для подсветки части текста используйте квадратные скобки: `"Мама [чит]ает"`.
+
+## Горячие клавиши (Electron)
+
+| Клавиша | Действие              |
+| ------- | --------------------- |
+| `Esc`   | Модальное окно выхода |
+
+## Лицензия
+
+Private project.
