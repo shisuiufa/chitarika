@@ -1,25 +1,21 @@
 import {
-  GAME_ACTIONS,
   GameHistory,
   GameLoading,
   GamePlay,
   GameResult,
   GameSettings,
-  gameReducer,
-  initialGameState,
-  type GameSettingsState,
-  type ReadingTask,
+  useGameController,
 } from "@/features/game";
 
 import AppLoader from "@/shared/ui/AppLoader";
 import FlyingBackground from "@/shared/ui/FlyingBackground";
-import { useEffect, useReducer, useState } from "react";
+import { useEffect, useState } from "react";
 import { SCREENS } from "./features/game/constants/screens";
 
 function App() {
   const [isAppLoading, setIsAppLoading] = useState(true);
 
-  const [gameState, dispatch] = useReducer(gameReducer, initialGameState);
+  const { gameState, handlers } = useGameController();
 
   useEffect(() => {
     let timeoutId: number | null = null;
@@ -56,68 +52,6 @@ function App() {
     };
   }, []);
 
-  const handleStartGame = () => {
-    dispatch({
-      type: GAME_ACTIONS.GameStarted,
-    });
-  };
-
-  const handleLoadingComplete = (tasks: ReadingTask[]) => {
-    dispatch({
-      type: GAME_ACTIONS.LoadingCompleted,
-      payload: {
-        tasks,
-        startedAt: performance.now(),
-      },
-    });
-  };
-
-  const handleChangeSettings = (settings: GameSettingsState) => {
-    dispatch({
-      type: GAME_ACTIONS.SettingsChanged,
-      payload: settings,
-    });
-  };
-
-  const handleNextTask = () => {
-    dispatch({
-      type: GAME_ACTIONS.NextTask,
-    });
-  };
-
-  const handlePreviousTask = () => {
-    dispatch({
-      type: GAME_ACTIONS.PreviousTask,
-    });
-  };
-
-  const handleGameComplete = () => {
-    dispatch({
-      type: GAME_ACTIONS.GameCompleted,
-      payload: {
-        completedAt: performance.now(),
-      },
-    });
-  };
-
-  const handleOpenSettings = () => {
-    dispatch({
-      type: GAME_ACTIONS.SettingsOpened,
-    });
-  };
-
-  const handleOpenResult = () => {
-    dispatch({
-      type: GAME_ACTIONS.ResultOpened,
-    });
-  };
-
-  const handleOpenHistory = () => {
-    dispatch({
-      type: GAME_ACTIONS.HistoryOpened,
-    });
-  };
-
   if (isAppLoading) {
     return <AppLoader />;
   }
@@ -138,8 +72,8 @@ function App() {
           {gameState.screen === SCREENS.Settings && (
             <GameSettings
               settings={gameState.settings}
-              onStart={handleStartGame}
-              onChangeSettings={handleChangeSettings}
+              onStart={handlers.handleStartGame}
+              onChangeSettings={handlers.handleChangeSettings}
             />
           )}
 
@@ -148,9 +82,9 @@ function App() {
               settings={gameState.settings}
               tasks={gameState.tasks}
               currentTaskIndex={gameState.currentTaskIndex}
-              onPreviousTask={handlePreviousTask}
-              onNextTask={handleNextTask}
-              onComplete={handleGameComplete}
+              onPreviousTask={handlers.handlePreviousTask}
+              onNextTask={handlers.handleNextTask}
+              onComplete={handlers.handleGameComplete}
             />
           )}
 
@@ -161,9 +95,9 @@ function App() {
               tasks={gameState.tasks}
               level={gameState.settings.level}
               difficulty={gameState.settings.difficulty}
-              onOpenSettings={handleOpenSettings}
-              onOpenHistory={handleOpenHistory}
-              onRestart={handleStartGame}
+              onOpenSettings={handlers.handleOpenSettings}
+              onOpenHistory={handlers.handleOpenHistory}
+              onRestart={handlers.handleStartGame}
             />
           )}
 
@@ -172,16 +106,16 @@ function App() {
               tasks={gameState.tasks}
               level={gameState.settings.level}
               difficulty={gameState.settings.difficulty}
-              onBackToResult={handleOpenResult}
-              onRestart={handleStartGame}
+              onBackToResult={handlers.handleOpenResult}
+              onRestart={handlers.handleStartGame}
             />
           )}
 
           {gameState.screen === SCREENS.Loading && (
             <GameLoading
               settings={gameState.settings}
-              onComplete={handleLoadingComplete}
-              onOpenSettings={handleOpenSettings}
+              onComplete={handlers.handleLoadingComplete}
+              onOpenSettings={handlers.handleOpenSettings}
             />
           )}
         </div>

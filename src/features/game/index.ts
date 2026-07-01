@@ -6,5 +6,6 @@ export { GameSettings } from "./components/settings/GameSettings";
 export { GAME_ACTIONS } from "./constants/game-actions";
 export { gameReducer, initialGameState } from "./model/game-reducer";
 export { readingTasks } from "./model/reading-tasks";
+export { useGameController } from "./model/use-game-controller";
 export type { ReadingTask } from "./types/reading";
 export type { GameSettingsState } from "./types/setting";
