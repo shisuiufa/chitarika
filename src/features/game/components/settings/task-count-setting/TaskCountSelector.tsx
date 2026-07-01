@@ -67,6 +67,7 @@ export default function TaskCountSelector({
       <TaskCountSteps
         max={MAX_TASK_COUNT}
         value={selectedCount}
+        onSelect={onSelectCountAnswers}
         className="mt-vh-[35px]"
       />
     </Card>
