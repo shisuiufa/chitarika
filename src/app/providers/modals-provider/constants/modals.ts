@@ -1,4 +1,4 @@
-import ExitGameModal from "@/features/app-exit/components/ExitGameModal";
+import { ExitGameModal } from "@/features/app-exit";
 
 export const MODALS = {
   ExitGameModal,

@@ -1,20 +1,20 @@
-import { StrictMode } from "react";
-import { createRoot } from "react-dom/client";
-import { preload } from "react-dom";
-import "./assets/styles/index.css";
-import App from "./App.tsx";
 import comfortaaFont from "@/assets/fonts/Comfortaa.woff2?url";
 import nunitoSansFont from "@/assets/fonts/NunitoSans.woff2?url";
+import { StrictMode } from "react";
+import { preload } from "react-dom";
+import { createRoot } from "react-dom/client";
+import App from "./App.tsx";
+import "./assets/styles/index.css";
 
-import starEmpty from "@/assets/images/stars/star-empty.png";
-import starFilled from "@/assets/images/stars/star-filled.png";
+import { ModalRoot, ModalsProvider } from "@/app/providers/modals-provider";
 import bg1 from "@/assets/images/bgs/1.png";
 import bg2 from "@/assets/images/bgs/2.png";
 import bg3 from "@/assets/images/bgs/3.png";
 import bg4 from "@/assets/images/bgs/4.png";
 import bg5 from "@/assets/images/bgs/5.png";
-import { ModalRoot, ModalsProvider } from "@/app/providers/modals-provider";
-import ExitGameHotkey from "@/features/app-exit/components/ExitGameHotkey";
+import starEmpty from "@/assets/images/stars/star-empty.png";
+import starFilled from "@/assets/images/stars/star-filled.png";
+import { ExitGameHotkey } from "@/features/app-exit";
 
 preload(comfortaaFont, {
   as: "font",

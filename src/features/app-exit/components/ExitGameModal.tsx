@@ -1,10 +1,10 @@
-import Modal from "@/shared/ui/Modal";
-import Card from "@/shared/ui/Card";
+import { quitApp } from "@/shared/lib/electron/quit-app";
 import type { BaseModalProps } from "@/shared/types/modal";
 import Button from "@/shared/ui/Button";
-import { quitApp } from "@/shared/lib/electron/quit-app";
+import Card from "@/shared/ui/Card";
+import Modal from "@/shared/ui/Modal";
 
-export default function ExitGameModal({ onClose, ...props }: BaseModalProps) {
+export function ExitGameModal({ onClose, ...props }: BaseModalProps) {
   const handleExit = async () => {
     await quitApp();
   };

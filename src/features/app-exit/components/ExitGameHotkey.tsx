@@ -1,8 +1,8 @@
-import { useEffect } from "react";
 import { useModals } from "@/app/providers/modals-provider/hooks/useModals";
 import { isElectronApp } from "@/shared/lib/electron/is-electron-app";
+import { useEffect } from "react";
 
-export default function ExitGameHotkey() {
+export function ExitGameHotkey() {
   const { open, close, modals } = useModals();
 
   useEffect(() => {
