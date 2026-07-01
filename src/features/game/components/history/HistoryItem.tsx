@@ -2,7 +2,6 @@ import type { Level } from "../..//types/level";
 import type { ReadingTask } from "../..//types/reading";
 
 import Card from "@/shared/ui/Card";
-import HighlightedText from "../..//components/HighlightedText";
 import { LEVELS } from "../..//constants/levels";
 
 type GameHistoryItemProps = {
@@ -38,7 +37,7 @@ export default function HistoryItem({
           ${textClasses[level]}
         `}
       >
-        {<HighlightedText value={task.value} />}
+        {task.value}
       </p>
     </Card>
   );

@@ -6,7 +6,6 @@ import { LEVELS } from "../../constants/levels";
 import type { Difficulty } from "../../types/difficulty";
 import type { Level } from "../../types/level";
 import type { ReadingTask } from "../../types/reading";
-import HighlightedText from "../HighlightedText";
 import TaskHeader from "./TaskHeader";
 
 type TaskCardProps = {
@@ -89,7 +88,7 @@ export default function TaskCard({
             ${textClasses[level]}
           `}
           >
-            {<HighlightedText value={task.value} />}
+            {task.value}
           </p>
         </div>
       </Card>
