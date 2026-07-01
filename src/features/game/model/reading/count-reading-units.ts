@@ -1,7 +1,7 @@
-import type { ReadingTask } from "@/features/game/types/reading";
-import type { Level } from "@/features/game/types/level";
-import { LEVELS } from "@/features/game/constants/levels";
-import { countWords } from "@/features/game/model/reading/count-words";
+import { LEVELS } from "../../constants/levels";
+import { countWords } from "../../model/reading/count-words";
+import type { Level } from "../../types/level";
+import type { ReadingTask } from "../../types/reading";
 
 export function countReadingUnits(tasks: ReadingTask[], level: Level): number {
   if (level === LEVELS.Syllables) {

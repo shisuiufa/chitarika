@@ -1,6 +1,6 @@
-import type { DifficultyOption as DifficultyOptionType } from "@/features/game/types/difficulty";
-import Button from "@/shared/ui/Button";
 import StarIcon from "@/shared/icons/StarIcon";
+import Button from "@/shared/ui/Button";
+import type { DifficultyOption as DifficultyOptionType } from "../../../types/difficulty";
 
 type DifficultyOptionProps = {
   option: DifficultyOptionType;

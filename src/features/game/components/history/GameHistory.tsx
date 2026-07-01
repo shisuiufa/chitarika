@@ -1,11 +1,11 @@
-import type { ReadingTask } from "@/features/game/types/reading";
-import type { Level } from "@/features/game/types/level";
-import type { Difficulty } from "@/features/game/types/difficulty";
 import Card from "@/shared/ui/Card";
-import HistoryHeader from "@/features/game/components/history/HistoryHeader";
-import HistorySummary from "@/features/game/components/history/HistorySummary";
-import HistoryList from "@/features/game/components/history/HistoryList";
-import GameHistoryActions from "@/features/game/components/history/HistoryActions";
+import type { Difficulty } from "../../types/difficulty";
+import type { Level } from "../../types/level";
+import type { ReadingTask } from "../../types/reading";
+import GameHistoryActions from "./HistoryActions";
+import HistoryHeader from "./HistoryHeader";
+import HistoryList from "./HistoryList";
+import HistorySummary from "./HistorySummary";
 
 type GameHistoryProps = {
   tasks: ReadingTask[];
@@ -15,7 +15,7 @@ type GameHistoryProps = {
   onRestart: () => void;
 };
 
-export default function GameHistory({
+export function GameHistory({
   tasks,
   level,
   difficulty,

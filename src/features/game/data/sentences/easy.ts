@@ -1,6 +1,6 @@
-import { LEVELS } from "@/features/game/constants/levels";
-import { DIFFICULTIES } from "@/features/game/constants/difficulties";
-import type { ReadingTaskGroup } from "@/features/game/types/reading";
+import { DIFFICULTIES } from "../../constants/difficulties";
+import { LEVELS } from "../../constants/levels";
+import type { ReadingTaskGroup } from "../../types/reading";
 
 export const sentenceEasyGroup = {
   id: "sentences-easy",

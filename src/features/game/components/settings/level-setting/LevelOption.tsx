@@ -1,8 +1,8 @@
+import Button from "@/shared/ui/Button";
 import type {
   IconComponent,
   LevelOption as LevelOptionType,
-} from "@/features/game/types/level";
-import Button from "@/shared/ui/Button";
+} from "../../../types/level";
 
 type LevelOptionProps = {
   level: LevelOptionType;

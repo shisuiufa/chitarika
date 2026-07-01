@@ -1,19 +1,20 @@
-import { useEffect, useReducer, useState } from "react";
-import GameSettings from "@/features/game/components/settings/GameSettings";
-import GamePlay from "@/features/game/components/play/GamePlay";
-import GameResult from "@/features/game/components/result/GameResult";
-import GameHistory from "@/features/game/components/history/GameHistory";
-import { SCREENS } from "./features/game/constants/screens";
-import AppLoader from "@/shared/ui/AppLoader";
-import GameLoading from "@/features/game/components/loading/GameLoading";
 import {
+  GAME_ACTIONS,
+  GameHistory,
+  GameLoading,
+  GamePlay,
+  GameResult,
+  GameSettings,
   gameReducer,
   initialGameState,
-} from "@/features/game/model/game-reducer";
-import { GAME_ACTIONS } from "@/features/game/constants/game-actions";
-import type { GameSettingsState } from "@/features/game/types/setting";
-import type { ReadingTask } from "@/features/game/types/reading";
+  type GameSettingsState,
+  type ReadingTask,
+} from "@/features/game";
+
+import AppLoader from "@/shared/ui/AppLoader";
 import FlyingBackground from "@/shared/ui/FlyingBackground";
+import { useEffect, useReducer, useState } from "react";
+import { SCREENS } from "./features/game/constants/screens";
 
 function App() {
   const [isAppLoading, setIsAppLoading] = useState(true);

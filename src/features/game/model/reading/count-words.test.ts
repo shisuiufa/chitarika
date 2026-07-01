@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { countWords } from "@/features/game/model/reading/count-words";
+import { countWords } from "../../model/reading/count-words";
 
 describe("countWords", () => {
   it("counts words in a regular string", () => {

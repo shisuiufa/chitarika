@@ -76,17 +76,17 @@ npm run dist
 
 ## Скрипты
 
-| Команда             | Описание                        |
-| ------------------- | ------------------------------- |
-| `npm run dev`       | Dev-сервер Vite                 |
-| `npm run build`     | Production-сборка               |
-| `npm run preview`   | Просмотр production-сборки      |
-| `npm run electron`  | Запуск Electron (нужен `dev`)   |
-| `npm run dist`      | Сборка десктопного приложения   |
-| `npm run test`      | Запуск тестов (Vitest)          |
-| `npm run typecheck` | Проверка типов TypeScript       |
-| `npm run lint`      | ESLint                          |
-| `npm run format`    | Prettier                        |
+| Команда             | Описание                      |
+| ------------------- | ----------------------------- |
+| `npm run dev`       | Dev-сервер Vite               |
+| `npm run build`     | Production-сборка             |
+| `npm run preview`   | Просмотр production-сборки    |
+| `npm run electron`  | Запуск Electron (нужен `dev`) |
+| `npm run dist`      | Сборка десктопного приложения |
+| `npm run test`      | Запуск тестов (Vitest)        |
+| `npm run typecheck` | Проверка типов TypeScript     |
+| `npm run lint`      | ESLint                        |
+| `npm run format`    | Prettier                      |
 
 ## Структура проекта
 

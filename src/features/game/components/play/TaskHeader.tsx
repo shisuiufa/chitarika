@@ -1,10 +1,10 @@
-import type { Level } from "@/features/game/types/level";
-import { LEVELS } from "@/features/game/constants/levels";
-import type { Difficulty } from "@/features/game/types/difficulty";
-import { DIFFICULTIES } from "@/features/game/constants/difficulties";
 import Card from "@/shared/ui/Card";
 import ProgressBar from "@/shared/ui/ProgressBar";
-import TaskHeaderItem from "@/features/game/components/play/TaskHeaderItem";
+import { DIFFICULTIES } from "../../constants/difficulties";
+import { LEVELS } from "../../constants/levels";
+import type { Difficulty } from "../../types/difficulty";
+import type { Level } from "../../types/level";
+import TaskHeaderItem from "./TaskHeaderItem";
 
 type GameHeaderProps = {
   level: Level;

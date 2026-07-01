@@ -1,6 +1,6 @@
 import ReadIcon from "@/shared/icons/ReadIcon";
-import { getTaskCountLabel } from "@/features/game/model/reading/get-task-count-label";
 import Card from "@/shared/ui/Card";
+import { getTaskCountLabel } from "../../model/reading/get-task-count-label";
 
 type GameHistorySummaryProps = {
   className?: string;

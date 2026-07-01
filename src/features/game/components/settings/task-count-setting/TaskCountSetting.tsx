@@ -1,6 +1,6 @@
 import Card from "@/shared/ui/Card";
-import TaskCountSelector from "@/features/game/components/settings/task-count-setting/TaskCountSelector";
 import { Blocks } from "lucide-react";
+import TaskCountSelector from "./TaskCountSelector";
 
 type AnswerCountSettingProps = {
   className?: string;

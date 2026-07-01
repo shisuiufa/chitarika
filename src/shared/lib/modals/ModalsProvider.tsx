@@ -1,13 +1,6 @@
 import { type ReactNode, useCallback, useMemo, useState } from "react";
-import type {
-  OpenedModal,
-  ModalName,
-  ModalPropsMap,
-} from "@/app/providers/modals-provider/types/modals";
-import {
-  ModalContext,
-  type OpenModal,
-} from "@/app/providers/modals-provider/model/modals-context";
+import { ModalContext, type OpenModal } from "./modals-context";
+import type { ModalName, ModalPropsMap, OpenedModal } from "./types";
 
 type ModalsProviderProps = {
   children: ReactNode;
@@ -25,7 +18,7 @@ function createOpenedModal<Name extends ModalName>(
   };
 }
 
-export default function ModalsProvider({ children }: ModalsProviderProps) {
+export function ModalsProvider({ children }: ModalsProviderProps) {
   const [modals, setModals] = useState<OpenedModal[]>([]);
 
   const open: OpenModal = useCallback((name, props) => {

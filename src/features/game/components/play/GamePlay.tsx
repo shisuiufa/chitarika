@@ -1,6 +1,6 @@
-import TaskCard from "@/features/game/components/play/TaskCard";
-import type { GameSettingsState } from "@/features/game/types/setting";
-import type { ReadingTask } from "@/features/game/types/reading";
+import type { ReadingTask } from "../../types/reading";
+import type { GameSettingsState } from "../../types/setting";
+import TaskCard from "./TaskCard";
 
 type GameStateProps = {
   settings: GameSettingsState;
@@ -11,7 +11,7 @@ type GameStateProps = {
   onComplete: () => void;
 };
 
-export default function GamePlay({
+export function GamePlay({
   settings,
   tasks,
   currentTaskIndex,

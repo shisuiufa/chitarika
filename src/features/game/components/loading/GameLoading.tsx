@@ -1,9 +1,9 @@
 import ProgressBar from "@/shared/ui/ProgressBar";
-import LoadingText from "@/features/game/components/loading/LoadingText";
 import { useEffect, useEffectEvent, useState } from "react";
-import type { ReadingTask } from "@/features/game/types/reading";
-import type { GameSettingsState } from "@/features/game/types/setting";
-import { readingTasks } from "@/features/game/model/reading-tasks";
+import { readingTasks } from "../../model/reading-tasks";
+import type { ReadingTask } from "../../types/reading";
+import type { GameSettingsState } from "../../types/setting";
+import LoadingText from "./LoadingText";
 
 type GameLoadingProps = {
   settings: GameSettingsState;
@@ -11,7 +11,7 @@ type GameLoadingProps = {
   onOpenSettings: () => void;
 };
 
-export default function GameLoading({
+export function GameLoading({
   settings,
   onComplete,
   onOpenSettings,

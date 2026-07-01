@@ -6,7 +6,8 @@ import { createRoot } from "react-dom/client";
 import App from "./App.tsx";
 import "./assets/styles/index.css";
 
-import { ModalRoot, ModalsProvider } from "@/app/providers/modals-provider";
+import { ModalRoot } from "@/app/modals/ModalRoot.tsx";
+import { ModalsProvider } from "@/shared/lib/modals/ModalsProvider";
 import bg1 from "@/assets/images/bgs/1.png";
 import bg2 from "@/assets/images/bgs/2.png";
 import bg3 from "@/assets/images/bgs/3.png";

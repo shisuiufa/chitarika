@@ -1,9 +1,9 @@
-import ResultMetricCard from "@/features/game/components/result/result-metrics/ResultMetricCard";
-import TimeIcon from "@/shared/icons/TimeIcon";
 import BookIcon from "@/shared/icons/BookIcon";
 import ReadIcon from "@/shared/icons/ReadIcon";
-import { LEVELS } from "@/features/game/constants/levels";
-import type { Level } from "@/features/game/types/level";
+import TimeIcon from "@/shared/icons/TimeIcon";
+import { LEVELS } from "../../../constants/levels";
+import type { Level } from "../../../types/level";
+import ResultMetricCard from "./ResultMetricCard";
 
 type ResultMetricsProps = {
   level: Level;

@@ -1,7 +1,7 @@
-import DifficultySelector from "@/features/game/components/settings/difficulty-setting/DifficultySelector";
 import Card from "@/shared/ui/Card";
-import type { Difficulty } from "@/features/game/types/difficulty";
 import { ChartNoAxesColumnIncreasing } from "lucide-react";
+import type { Difficulty } from "../../../types/difficulty";
+import DifficultySelector from "./DifficultySelector";
 
 type DifficultySettingProps = {
   className?: string;

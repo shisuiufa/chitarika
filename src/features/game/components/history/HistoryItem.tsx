@@ -1,9 +1,9 @@
-import type { ReadingTask } from "@/features/game/types/reading";
-import type { Level } from "@/features/game/types/level";
+import type { Level } from "../..//types/level";
+import type { ReadingTask } from "../..//types/reading";
 
-import { LEVELS } from "@/features/game/constants/levels";
 import Card from "@/shared/ui/Card";
-import HighlightedText from "@/features/game/components/HighlightedText";
+import HighlightedText from "../..//components/HighlightedText";
+import { LEVELS } from "../..//constants/levels";
 
 type GameHistoryItemProps = {
   task: ReadingTask;

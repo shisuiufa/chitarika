@@ -1,10 +1,7 @@
-import type { Level } from "@/features/game/types/level";
-import type {
-  ReadingTask,
-  ReadingTaskGroup,
-} from "@/features/game/types/reading";
-import { LEVELS } from "@/features/game/constants/levels";
-import type { GameSettingsState } from "@/features/game/types/setting";
+import { LEVELS } from "../constants/levels";
+import type { Level } from "../types/level";
+import type { ReadingTask, ReadingTaskGroup } from "../types/reading";
+import type { GameSettingsState } from "../types/setting";
 
 async function loadGroupsByLevel(level: Level): Promise<ReadingTaskGroup[]> {
   switch (level) {

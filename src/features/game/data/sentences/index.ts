@@ -1,8 +1,8 @@
-import type { ReadingTaskGroup } from "@/features/game/types/reading";
+import type { ReadingTaskGroup } from "../../types/reading";
 
 import { sentenceEasyGroup } from "./easy";
-import { sentenceMediumGroup } from "./medium";
 import { sentenceHardGroup } from "./hard";
+import { sentenceMediumGroup } from "./medium";
 
 export const sentenceGroups = [
   sentenceEasyGroup,

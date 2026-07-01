@@ -1,8 +1,8 @@
-import CircleButton from "@/shared/ui/CircleButton";
-import { getTaskCountLabel } from "@/features/game/model/reading/get-task-count-label";
-import { Minus, Plus } from "lucide-react";
 import Card from "@/shared/ui/Card";
-import TaskCountSteps from "@/features/game/components/settings/task-count-setting/TaskCountSteps";
+import CircleButton from "@/shared/ui/CircleButton";
+import { Minus, Plus } from "lucide-react";
+import { getTaskCountLabel } from "../../../model/reading/get-task-count-label";
+import TaskCountSteps from "./TaskCountSteps";
 
 type AnswerCountSelectorProps = {
   className?: string;

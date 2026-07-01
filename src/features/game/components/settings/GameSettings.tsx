@@ -1,10 +1,10 @@
 import Button from "@/shared/ui/Button";
-import { Play } from "lucide-react";
 import Card from "@/shared/ui/Card";
-import LevelSetting from "@/features/game/components/settings/level-setting/LevelSetting";
-import type { GameSettingsState } from "@/features/game/types/setting";
-import TaskCountSetting from "@/features/game/components/settings/task-count-setting/TaskCountSetting";
-import DifficultySetting from "@/features/game/components/settings/difficulty-setting/DifficultySetting";
+import { Play } from "lucide-react";
+import type { GameSettingsState } from "../../types/setting";
+import DifficultySetting from "./difficulty-setting/DifficultySetting";
+import LevelSetting from "./level-setting/LevelSetting";
+import TaskCountSetting from "./task-count-setting/TaskCountSetting";
 
 type GameSettingsProps = {
   settings: GameSettingsState;
@@ -12,7 +12,7 @@ type GameSettingsProps = {
   onChangeSettings: (settings: GameSettingsState) => void;
 };
 
-export default function GameSettings({
+export function GameSettings({
   settings,
   onStart,
   onChangeSettings,

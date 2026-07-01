@@ -1,8 +1,8 @@
-import type { GameAction, GameState } from "@/features/game/types/game";
-import { SCREENS } from "@/features/game/constants/screens";
-import { LEVELS } from "@/features/game/constants/levels";
-import { DIFFICULTIES } from "@/features/game/constants/difficulties";
-import { GAME_ACTIONS } from "@/features/game/constants/game-actions";
+import { DIFFICULTIES } from "../constants/difficulties";
+import { GAME_ACTIONS } from "../constants/game-actions";
+import { LEVELS } from "../constants/levels";
+import { SCREENS } from "../constants/screens";
+import type { GameAction, GameState } from "../types/game";
 
 export const initialGameState: GameState = {
   screen: SCREENS.Settings,

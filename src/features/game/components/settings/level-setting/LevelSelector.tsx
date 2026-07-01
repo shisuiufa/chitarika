@@ -1,6 +1,6 @@
-import LevelOption from "@/features/game/components/settings/level-setting/LevelOption";
-import { LEVEL_OPTIONS } from "@/features/game/constants/levels";
-import type { Level } from "@/features/game/types/level";
+import { LEVEL_OPTIONS } from "../../../constants/levels";
+import type { Level } from "../../../types/level";
+import LevelOption from "./LevelOption";
 
 type LevelSelectorProps = {
   selectedLevel: Level;

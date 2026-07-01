@@ -1,5 +1,5 @@
-import type { Level } from "@/features/game/types/level";
-import type { Difficulty } from "@/features/game/types/difficulty";
+import type { Difficulty } from "../types/difficulty";
+import type { Level } from "../types/level";
 
 export type ReadingTask = {
   id: string;

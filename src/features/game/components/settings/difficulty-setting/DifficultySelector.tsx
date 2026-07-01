@@ -1,6 +1,6 @@
-import { type Difficulty } from "@/features/game/types/difficulty";
-import { DIFFICULTY_OPTIONS } from "@/features/game/constants/difficulties";
-import DifficultyOption from "@/features/game/components/settings/difficulty-setting/DifficultyOption";
+import { DIFFICULTY_OPTIONS } from "../../../constants/difficulties";
+import { type Difficulty } from "../../../types/difficulty";
+import DifficultyOption from "./DifficultyOption";
 
 type DifficultySelectorProps = {
   selectedDifficulty: Difficulty;

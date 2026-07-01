@@ -1,10 +1,10 @@
-import type { Level } from "@/features/game/types/level";
-import type { Difficulty } from "@/features/game/types/difficulty";
-import { LEVELS } from "@/features/game/constants/levels";
-import { DIFFICULTIES } from "@/features/game/constants/difficulties";
-import ResultInfoCard from "@/features/game/components/result/result-details/ResultInfoCard";
 import LevelIcon from "@/shared/icons/LevelIcon";
 import StarIcon from "@/shared/icons/StarIcon";
+import { DIFFICULTIES } from "../../../constants/difficulties";
+import { LEVELS } from "../../../constants/levels";
+import type { Difficulty } from "../../../types/difficulty";
+import type { Level } from "../../../types/level";
+import ResultInfoCard from "./ResultInfoCard";
 
 type ResultDetailsProps = {
   level: Level;

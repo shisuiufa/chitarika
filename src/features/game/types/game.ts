@@ -1,7 +1,7 @@
-import type { Screen } from "@/features/game/types/screen";
-import type { GameSettingsState } from "@/features/game/types/setting";
-import { GAME_ACTIONS } from "@/features/game/constants/game-actions";
-import type { ReadingTask } from "@/features/game/types/reading";
+import { GAME_ACTIONS } from "../constants/game-actions";
+import type { ReadingTask } from "../types/reading";
+import type { Screen } from "../types/screen";
+import type { GameSettingsState } from "../types/setting";
 
 export type GameState = {
   screen: Screen;

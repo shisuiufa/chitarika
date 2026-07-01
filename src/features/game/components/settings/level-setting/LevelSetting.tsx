@@ -1,7 +1,7 @@
 import LevelIcon from "@/shared/icons/LevelIcon";
-import type { Level } from "@/features/game/types/level";
-import LevelSelector from "@/features/game/components/settings/level-setting/LevelSelector";
 import Card from "@/shared/ui/Card";
+import type { Level } from "../../../types/level";
+import LevelSelector from "./LevelSelector";
 
 type LevelSettingProps = {
   selectedLevel: Level;

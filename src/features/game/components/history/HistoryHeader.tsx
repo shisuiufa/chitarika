@@ -1,6 +1,6 @@
-import ResultDetails from "@/features/game/components/result/result-details/ResultDetails";
-import type { Difficulty } from "@/features/game/types/difficulty";
-import type { Level } from "@/features/game/types/level";
+import type { Difficulty } from "../../types/difficulty";
+import type { Level } from "../../types/level";
+import ResultDetails from "../result/result-details/ResultDetails";
 
 type GameHistoryHeaderProps = {
   className?: string;

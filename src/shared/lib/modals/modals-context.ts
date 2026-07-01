@@ -1,9 +1,5 @@
 import { createContext } from "react";
-import type {
-  ModalName,
-  ModalPropsMap,
-  OpenedModal,
-} from "@/app/providers/modals-provider/types/modals";
+import type { ModalName, ModalPropsMap, OpenedModal } from "./types";
 
 export type OpenModal = <Name extends ModalName>(
   name: Name,

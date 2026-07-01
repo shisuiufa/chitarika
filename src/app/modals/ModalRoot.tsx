@@ -1,7 +1,7 @@
-import { useModals } from "@/app/providers/modals-provider/hooks/useModals";
-import { MODALS } from "@/app/providers/modals-provider/constants/modals";
+import { useModals } from "@/shared/lib/modals/hooks/useModals";
+import { MODALS } from "./modals";
 
-export default function ModalRoot() {
+export function ModalRoot() {
   const { modals, remove, close } = useModals();
 
   return modals.map(({ id, name, status, props }) => {

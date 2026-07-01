@@ -1,4 +1,4 @@
-import type { DIFFICULTIES } from "@/features/game/constants/difficulties";
+import type { DIFFICULTIES } from "../constants/difficulties";
 
 export type Difficulty = (typeof DIFFICULTIES)[keyof typeof DIFFICULTIES];
 

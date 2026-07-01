@@ -1,8 +1,8 @@
-import type { ReadingTaskGroup } from "@/features/game/types/reading";
+import type { ReadingTaskGroup } from "../../types/reading";
 
 import { syllableEasyGroup } from "./easy";
-import { syllableMediumGroup } from "./medium";
 import { syllableHardGroup } from "./hard";
+import { syllableMediumGroup } from "./medium";
 
 export const syllableGroups = [
   syllableEasyGroup,

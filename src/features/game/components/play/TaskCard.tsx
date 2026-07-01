@@ -1,13 +1,13 @@
-import Card from "@/shared/ui/Card";
-import { LEVELS } from "@/features/game/constants/levels";
-import type { ReadingTask } from "@/features/game/types/reading";
-import type { Level } from "@/features/game/types/level";
 import Button from "@/shared/ui/Button";
-import HighlightedText from "@/features/game/components/HighlightedText";
+import Card from "@/shared/ui/Card";
 import { ArrowLeft, ArrowRight, Flag } from "lucide-react";
 import type { ReactNode } from "react";
-import TaskHeader from "@/features/game/components/play/TaskHeader";
-import type { Difficulty } from "@/features/game/types/difficulty";
+import { LEVELS } from "../../constants/levels";
+import type { Difficulty } from "../../types/difficulty";
+import type { Level } from "../../types/level";
+import type { ReadingTask } from "../../types/reading";
+import HighlightedText from "../HighlightedText";
+import TaskHeader from "./TaskHeader";
 
 type TaskCardProps = {
   className?: string;

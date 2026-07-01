@@ -1,5 +1,5 @@
 import type { ComponentType } from "react";
-import { type LEVELS, LEVEL_OPTIONS } from "@/features/game/constants/levels";
+import { type LEVELS, LEVEL_OPTIONS } from "../constants/levels";
 
 export type Level = (typeof LEVELS)[keyof typeof LEVELS];
 

@@ -1,5 +1,5 @@
-import type { Level } from "@/features/game/types/level";
-import { LEVELS } from "@/features/game/constants/levels";
+import { LEVELS } from "../../constants/levels";
+import type { Level } from "../../types/level";
 
 export function getReadingUnitLabel(count: number, level: Level): string {
   const forms =

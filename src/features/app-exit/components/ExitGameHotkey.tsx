@@ -1,5 +1,5 @@
-import { useModals } from "@/app/providers/modals-provider/hooks/useModals";
 import { isElectronApp } from "@/shared/lib/electron/is-electron-app";
+import { useModals } from "@/shared/lib/modals/hooks/useModals";
 import { useEffect } from "react";
 
 export function ExitGameHotkey() {

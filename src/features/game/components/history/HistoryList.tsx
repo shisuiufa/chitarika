@@ -1,6 +1,6 @@
-import type { ReadingTask } from "@/features/game/types/reading";
-import type { Level } from "@/features/game/types/level";
-import HistoryItem from "@/features/game/components/history/HistoryItem";
+import type { Level } from "../..//types/level";
+import type { ReadingTask } from "../..//types/reading";
+import HistoryItem from "./HistoryItem";
 
 type GameHistoryListProps = {
   className?: string;

@@ -1,16 +1,16 @@
-import type { ReadingTask } from "@/features/game/types/reading";
-import type { Level } from "@/features/game/types/level";
-import type { Difficulty } from "@/features/game/types/difficulty";
-import { getElapsedSeconds } from "@/features/game/model/time/get-elapsed-seconds";
-import { formatElapsedTime } from "@/features/game/model/time/format-elapsed-time";
-import { countReadingUnits } from "@/features/game/model/reading/count-reading-units";
-import { getReadingSpeed } from "@/features/game/model/reading/get-reading-speed";
 import Card from "@/shared/ui/Card";
-import { getReadingUnitLabel } from "@/features/game/model/reading/get-reading-unit-label";
-import ResultStars from "@/features/game/components/result/ResultStars";
-import ResultActions from "@/features/game/components/result/ResultActions";
-import ResultMetrics from "@/features/game/components/result/result-metrics/ResultMetrics";
-import ResultDetails from "@/features/game/components/result/result-details/ResultDetails";
+import { countReadingUnits } from "../..//model/reading/count-reading-units";
+import { getReadingSpeed } from "../..//model/reading/get-reading-speed";
+import { getReadingUnitLabel } from "../..//model/reading/get-reading-unit-label";
+import { formatElapsedTime } from "../..//model/time/format-elapsed-time";
+import { getElapsedSeconds } from "../..//model/time/get-elapsed-seconds";
+import type { Difficulty } from "../..//types/difficulty";
+import type { Level } from "../..//types/level";
+import type { ReadingTask } from "../../types/reading";
+import ResultActions from "./ResultActions";
+import ResultStars from "./ResultStars";
+import ResultDetails from "./result-details/ResultDetails";
+import ResultMetrics from "./result-metrics/ResultMetrics";
 
 type GameResultProps = {
   startedAt: number;
@@ -23,7 +23,7 @@ type GameResultProps = {
   onRestart: () => void;
 };
 
-export default function GameResult({
+export function GameResult({
   startedAt,
   completedAt,
   tasks,
